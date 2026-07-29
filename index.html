@@ -74,6 +74,7 @@ a{color:var(--accent);text-decoration:none}
 
   <div style="border-bottom:1px solid var(--bd);margin-bottom:16px">
     <button class="tab on" id="tab-dash" onclick="setView('dash')">Дашборд</button>
+    <button class="tab" id="tab-fav" onclick="setView('fav')">Избранное <span class="small mut" id="favCount"></span></button>
     <button class="tab" id="tab-gloss" onclick="setView('gloss')">Термины</button>
   </div>
 
@@ -129,10 +130,20 @@ a{color:var(--accent);text-decoration:none}
         <div class="sect-t" style="margin:0">Лента материалов</div>
         <button class="btn" id="exportBtn" onclick="exportSelection()">↓ Экспорт подборки (0)</button>
       </div>
-      <div class="row" style="margin-bottom:10px"><input class="f search" id="q" placeholder="поиск по заголовку и сути" oninput="applyFilters()"/></div>
+      <div class="row" style="margin-bottom:10px"><input class="f search" id="q" placeholder="поиск по заголовку и сути" oninput="applyFilters()"/><select class="f" id="dateFilter" onchange="applyFilters()"><option value="0">За всё время</option><option value="7">7 дней</option><option value="30">30 дней</option><option value="90">90 дней</option></select></div>
       <div class="row" id="topicChips" style="margin-bottom:8px"></div>
       <div class="row" id="srcChips" style="margin-bottom:12px"></div>
       <div id="feed"></div>
+    </div>
+  </div>
+
+  <div id="view-fav" class="hidden">
+    <div class="card">
+      <div class="row between" style="margin-bottom:10px">
+        <div class="sect-t" style="margin:0">Избранное <span class="small mut" id="favCount2"></span></div>
+        <button class="btn" onclick="exportSelection()">↓ Экспорт (.md)</button>
+      </div>
+      <div id="favList"></div>
     </div>
   </div>
 
@@ -253,8 +264,9 @@ a{color:var(--accent);text-decoration:none}
 </script>
 
 <script>
-const STATE={region:"all",topic:"all",src:"all",gtopic:"all",view:"dash",data:null};
+const STATE={region:"all",topic:"all",src:"all",gtopic:"all",dateRange:0,view:"dash",data:null};
 const LS_ADD="tt_user_companies";
+const LS_SAVED="tt_saved_materials";
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
@@ -271,8 +283,11 @@ async function load(){
   try{const r=await fetch('data.json',{cache:'no-store'});if(!r.ok)throw 0;STATE.data=await r.json();}
   catch(e){try{STATE.data=JSON.parse($('fallbackData').textContent);}catch(_){$('feed').innerHTML='<div class="mut small">Не удалось загрузить data.json.</div>';return;}}
   mergeUserCompanies();
+  mergeSaved();
   render();
 }
+function mergeSaved(){try{const ids=JSON.parse(localStorage.getItem(LS_SAVED)||"[]");STATE.data.materials.forEach(m=>{if(ids.includes(m.id))m.saved=true;});}catch(e){}}
+function persistSaved(){try{localStorage.setItem(LS_SAVED,JSON.stringify(STATE.data.materials.filter(m=>m.saved).map(m=>m.id)));}catch(e){}}
 function mergeUserCompanies(){
   try{const add=JSON.parse(localStorage.getItem(LS_ADD)||"[]");
     add.forEach(c=>{if(!STATE.data.watchlist.some(w=>w.name===c.name))STATE.data.watchlist.unshift(c);});}catch(e){}
@@ -282,10 +297,13 @@ function regionLabel(id){const r=STATE.data.regions.find(x=>x.id===id);return r?
 
 function setView(v){STATE.view=v;
   $('view-dash').classList.toggle('hidden',v!=='dash');
+  $('view-fav').classList.toggle('hidden',v!=='fav');
   $('view-gloss').classList.toggle('hidden',v!=='gloss');
   $('tab-dash').classList.toggle('on',v==='dash');
+  $('tab-fav').classList.toggle('on',v==='fav');
   $('tab-gloss').classList.toggle('on',v==='gloss');
   if(v==='gloss')renderGlossary();
+  if(v==='fav')renderFav();
 }
 
 function render(){
@@ -306,7 +324,7 @@ function render(){
   $('newtags').innerHTML=d.new_tags.map((t,i)=>`<div class="muted-row"><span><b>${esc(t.tag)}</b> <span class="small mut">· ${esc(t.facet)}</span><div class="small mut">${esc(t.note)}</div></span><span class="row"><button class="iconbtn" title="утвердить" onclick="approveTag(${i})">✓</button><button class="iconbtn" title="отклонить" onclick="approveTag(${i})">✕</button></span></div>`).join('')||'<div class="small mut">нет новых тегов</div>';
 
   const rsel=$('ac-region');if(rsel)rsel.innerHTML=d.regions.map(r=>`<option value="${r.id}">${esc(r.label)}</option>`).join('');
-  renderRadar();renderWatchlist();buildFeedChips();applyFilters();buildGlossChips();
+  renderRadar();renderWatchlist();buildFeedChips();applyFilters();buildGlossChips();updateFavCount();
 }
 
 let chM,chD;
@@ -343,12 +361,17 @@ function addCompany(){
 function buildFeedChips(){const d=STATE.data;
   const tc=$('topicChips');tc.innerHTML='';[['all','Все темы'],...d.topics.map(t=>[t.id,t.label])].forEach(([id,lab])=>{const b=document.createElement('button');b.className='chip'+(STATE.topic===id?' on':'');b.textContent=lab;b.onclick=()=>{STATE.topic=id;buildFeedChips();applyFilters();};tc.appendChild(b);});
   const sc=$('srcChips');sc.innerHTML='';[['all','Все источники'],...d.source_types.map(s=>[s.id,s.label])].forEach(([id,lab])=>{const b=document.createElement('button');b.className='chip'+(STATE.src===id?' on':'');b.textContent=lab;b.onclick=()=>{STATE.src=id;buildFeedChips();applyFilters();};sc.appendChild(b);});}
-function applyFilters(){const d=STATE.data,TM=topicMap(),q=($('q').value||'').toLowerCase();
-  const rows=d.materials.filter(m=>(STATE.region==='all'||m.region===STATE.region)&&(STATE.topic==='all'||m.topic===STATE.topic)&&(STATE.src==='all'||m.source_type===STATE.src)&&(!q||(m.title+' '+m.summary).toLowerCase().includes(q)));
-  $('feed').innerHTML=rows.map(m=>{const t=TM[m.topic]||{label:m.topic,color:'#999'};const stLabel=(d.source_types.find(s=>s.id===m.source_type)||{}).label||m.source_type;
-    return `<div class="item"><span class="dt">${esc(m.date.slice(8,10))}.${esc(m.date.slice(5,7))}</span><div style="flex:1;min-width:0"><div class="ttl">${esc(m.title)}</div><div class="small mut" style="margin-bottom:7px">${esc(m.summary)}</div><div class="row" style="gap:6px"><span class="tag"><span class="dot" style="background:${t.color}"></span>${esc(t.label)}</span><span class="pill">${esc(stLabel)}</span><span class="pill">${esc(regionLabel(m.region))}</span></div></div><div class="row" style="gap:4px;align-items:flex-start"><button class="iconbtn star ${m.saved?'on':''}" title="в обзор литературы" aria-pressed="${!!m.saved}" onclick="toggleSave('${m.id}')">★</button><button class="iconbtn" title="сохранить на диск" onclick="saveOne('${m.id}')">⭳</button><a class="iconbtn" title="открыть источник" href="${esc(m.url)}" target="_blank" rel="noopener">↗</a></div></div>`;}).join('')||'<div class="small mut">ничего не найдено по фильтрам</div>';
+function daysSince(ds){try{return Math.floor((Date.now()-new Date(ds).getTime())/86400000);}catch(e){return 99999;}}
+function rowHtml(m){const d=STATE.data,TM=topicMap();const t=TM[m.topic]||{label:m.topic,color:'#999'};const stLabel=(d.source_types.find(s=>s.id===m.source_type)||{}).label||m.source_type;
+  return `<div class="item"><span class="dt">${esc(m.date.slice(8,10))}.${esc(m.date.slice(5,7))}</span><div style="flex:1;min-width:0"><div class="ttl">${esc(m.title)}</div><div class="small mut" style="margin-bottom:7px">${esc(m.summary)}</div><div class="row" style="gap:6px"><span class="tag"><span class="dot" style="background:${t.color}"></span>${esc(t.label)}</span><span class="pill">${esc(stLabel)}</span><span class="pill">${esc(regionLabel(m.region))}</span></div></div><div class="row" style="gap:4px;align-items:flex-start"><button class="iconbtn star ${m.saved?'on':''}" title="в избранное" aria-pressed="${!!m.saved}" onclick="toggleSave('${m.id}')">★</button><button class="iconbtn" title="сохранить на диск" onclick="saveOne('${m.id}')">⭳</button><a class="iconbtn" title="открыть источник" href="${esc(m.url)}" target="_blank" rel="noopener">↗</a></div></div>`;}
+function applyFilters(){const d=STATE.data,q=($('q').value||'').toLowerCase();STATE.dateRange=parseInt(($('dateFilter')||{}).value||'0',10);
+  const rows=d.materials.filter(m=>(STATE.region==='all'||m.region===STATE.region)&&(STATE.topic==='all'||m.topic===STATE.topic)&&(STATE.src==='all'||m.source_type===STATE.src)&&(STATE.dateRange===0||daysSince(m.date)<=STATE.dateRange)&&(!q||(m.title+' '+m.summary).toLowerCase().includes(q)));
+  $('feed').innerHTML=rows.map(rowHtml).join('')||'<div class="small mut">ничего не найдено по фильтрам</div>';
   updateExport();}
-function toggleSave(id){const m=STATE.data.materials.find(x=>x.id===id);if(m){m.saved=!m.saved;applyFilters();}}
+function renderFav(){const sv=(STATE.data.materials||[]).filter(m=>m.saved);const el=$('favList');
+  if(el)el.innerHTML=sv.map(rowHtml).join('')||'<div class="small mut">Пока пусто. Отмечайте материалы звездой ★ в ленте — они появятся здесь.</div>';}
+function updateFavCount(){const n=(STATE.data.materials||[]).filter(m=>m.saved).length;const a=$('favCount'),b=$('favCount2');if(a)a.textContent=n?`(${n})`:'';if(b)b.textContent=n?`· ${n}`:'';}
+function toggleSave(id){const m=STATE.data.materials.find(x=>x.id===id);if(m){m.saved=!m.saved;persistSaved();applyFilters();renderFav();updateFavCount();}}
 function updateExport(){$('exportBtn').textContent=`↓ Экспорт подборки (${STATE.data.materials.filter(m=>m.saved).length})`;}
 function approveTag(i){STATE.data.new_tags.splice(i,1);render();}
 
