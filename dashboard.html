@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Трекер трендов — агентный менеджмент</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<style>
+:root{--bg:#f6f6f9;--card:#fff;--ink:#1c1c28;--mut:#6b6b76;--hint:#9a9aa6;--bd:#e8e8ef;--accent:#4a3aa7;--up:#199e70;--warn:#854f0b;--warnbg:#faeeda}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:22px 20px 60px}
+h1{font-size:20px;font-weight:700;margin:0}
+.sub{color:var(--mut);font-size:13px}
+.row{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.between{justify-content:space-between}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:16px 18px}
+.grid{display:grid;gap:14px}
+.sect-t{font-size:14px;font-weight:700;margin:0 0 10px}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.kpi .l{color:var(--mut);font-size:12px}
+.kpi .v{font-size:26px;font-weight:700;margin-top:2px}
+.kpi .d{font-size:12px;color:var(--up);font-weight:600}
+.btn{border:1px solid var(--bd);background:#fff;color:var(--ink);border-radius:8px;padding:6px 11px;font-size:13px;cursor:pointer;font-weight:600}
+.btn:hover{background:#f3f2fa}
+.tab{border:0;background:none;padding:8px 4px;margin-right:18px;font-size:15px;font-weight:600;color:var(--mut);cursor:pointer;border-bottom:2px solid transparent}
+.tab.on{color:var(--ink);border-bottom-color:var(--accent)}
+.chip{border:1px solid var(--bd);background:#fff;border-radius:999px;padding:4px 11px;font-size:12px;cursor:pointer;color:var(--mut)}
+.chip.on{background:#efeefb;border-color:#d7d3f2;color:var(--accent);font-weight:600}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--mut);margin-bottom:8px}
+.legend span{display:flex;align-items:center;gap:5px}
+.pill{font-size:11px;color:var(--mut);border:1px solid var(--bd);border-radius:8px;padding:2px 8px}
+.tag{display:inline-flex;align-items:center;gap:5px;font-size:11px;color:var(--mut);border:1px solid var(--bd);border-radius:8px;padding:2px 8px}
+.item{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--bd)}
+.item:last-child{border-bottom:0}
+.item .dt{font-size:12px;color:var(--hint);min-width:44px;padding-top:2px}
+.ttl{font-size:14px;line-height:1.45;margin:0 0 6px}
+.iconbtn{width:30px;height:30px;border:1px solid var(--bd);background:#fff;border-radius:8px;cursor:pointer;color:var(--mut);font-size:14px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none}
+.iconbtn:hover{background:#f3f2fa}
+.iconbtn.star.on{color:#d99a00;border-color:#f0d692;background:#fdf6e3}
+.wl{display:flex;align-items:center;gap:12px;padding:11px 0;border-bottom:1px solid var(--bd)}
+.wl:last-child{border-bottom:0}
+.st{font-size:11px;font-weight:600;border-radius:8px;padding:3px 8px}
+.alert{display:flex;gap:10px;align-items:flex-start;background:var(--warnbg);border-radius:10px;padding:10px 12px;margin-bottom:8px}
+.mut{color:var(--mut)}.small{font-size:12px}
+input.f,select.f{border:1px solid var(--bd);border-radius:8px;padding:7px 10px;font-size:13px;background:#fff;color:var(--ink)}
+input.search{flex:1;min-width:200px}
+canvas{max-width:100%}
+a{color:var(--accent);text-decoration:none}
+.muted-row{display:flex;align-items:center;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--bd);font-size:13px}
+.muted-row:last-child{border-bottom:0}
+.gitem{padding:12px 0;border-bottom:1px solid var(--bd)}
+.gitem:last-child{border-bottom:0}
+.hidden{display:none}
+.form{background:#faf9ff;border:1px solid #e5e1f7;border-radius:10px;padding:12px;margin-bottom:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="row between" style="margin-bottom:10px">
+    <div>
+      <h1>Трекер трендов — агентный менеджмент</h1>
+      <div class="sub" id="updated"></div>
+    </div>
+    <div class="row">
+      <div class="row" id="regions"></div>
+      <button class="btn" onclick="location.reload()">↻ Обновить</button>
+    </div>
+  </div>
+
+  <div class="sub" id="regionDesc" style="margin:-2px 0 14px"></div>
+
+  <div style="border-bottom:1px solid var(--bd);margin-bottom:16px">
+    <button class="tab on" id="tab-dash" onclick="setView('dash')">Дашборд</button>
+    <button class="tab" id="tab-gloss" onclick="setView('gloss')">Термины</button>
+  </div>
+
+  <div id="view-dash">
+    <div class="grid kpis" id="kpis" style="margin-bottom:16px"></div>
+
+    <div class="grid" style="grid-template-columns:1.5fr 1fr;margin-bottom:16px">
+      <div class="card">
+        <div class="sect-t">Динамика публикаций по подтемам</div>
+        <div class="legend" id="mlegend"></div>
+        <div style="position:relative;height:230px"><canvas id="momentum" role="img" aria-label="Динамика публикаций по подтемам по неделям"></canvas></div>
+      </div>
+      <div class="card">
+        <div class="sect-t">Тип источника</div>
+        <div class="legend" id="slegend"></div>
+        <div style="position:relative;height:190px"><canvas id="donut" role="img" aria-label="Распределение по типу источника"></canvas></div>
+      </div>
+    </div>
+
+    <div class="grid" style="grid-template-columns:1fr 1fr;margin-bottom:16px">
+      <div class="card"><div class="sect-t">Возникающие термины и игроки</div><div id="emerging"></div></div>
+      <div class="card"><div class="sect-t">Новые теги на утверждение</div><div id="newtags"></div></div>
+    </div>
+
+    <div class="card" style="margin-bottom:16px">
+      <div class="sect-t" style="color:var(--warn)">⚑ Радар — новые игроки и направления</div>
+      <div id="radar"></div>
+    </div>
+
+    <div class="card" style="margin-bottom:16px">
+      <div class="row between" style="margin-bottom:6px">
+        <div class="sect-t" style="margin:0">Watchlist — компании под наблюдением</div>
+        <div class="row"><span class="small mut" id="wcount"></span><button class="btn" onclick="toggleAdd()">+ Добавить компанию</button></div>
+      </div>
+      <div class="form hidden" id="addForm">
+        <div class="row" style="margin-bottom:8px">
+          <input class="f" id="ac-name" placeholder="название компании" style="flex:1;min-width:160px"/>
+          <input class="f" id="ac-site" placeholder="сайт или ссылка (необязательно)" style="flex:1;min-width:160px"/>
+        </div>
+        <div class="row" style="margin-bottom:8px">
+          <select class="f" id="ac-region"></select>
+          <label class="small mut"><input type="checkbox" id="ac-t"/> токены</label>
+          <label class="small mut"><input type="checkbox" id="ac-a"/> ИИ-агенты</label>
+        </div>
+        <div class="row"><button class="btn" onclick="addCompany()">Добавить на анализ</button><button class="btn" onclick="toggleAdd()">Отмена</button>
+          <span class="small mut">агент проанализирует сайт/название и подберёт ключевые слова для поиска</span></div>
+      </div>
+      <div id="watchlist"></div>
+    </div>
+
+    <div class="card">
+      <div class="row between" style="margin-bottom:10px">
+        <div class="sect-t" style="margin:0">Лента материалов</div>
+        <button class="btn" id="exportBtn" onclick="exportSelection()">↓ Экспорт подборки (0)</button>
+      </div>
+      <div class="row" style="margin-bottom:10px"><input class="f search" id="q" placeholder="поиск по заголовку и сути" oninput="applyFilters()"/></div>
+      <div class="row" id="topicChips" style="margin-bottom:8px"></div>
+      <div class="row" id="srcChips" style="margin-bottom:12px"></div>
+      <div id="feed"></div>
+    </div>
+  </div>
+
+  <div id="view-gloss" class="hidden">
+    <div class="card">
+      <div class="row between" style="margin-bottom:12px">
+        <div class="sect-t" style="margin:0">Термины по теме <span class="small mut" id="gcount"></span></div>
+        <div class="row">
+          <input class="f search" id="gq" placeholder="поиск по термину и определению" oninput="renderGlossary()" style="min-width:180px"/>
+          <select class="f" id="gsort" onchange="renderGlossary()">
+            <option value="mentions">по упоминаниям</option>
+            <option value="alpha">по алфавиту</option>
+          </select>
+          <button class="btn" onclick="downloadGlossary('all')">↓ Скачать все</button>
+          <button class="btn" id="gselBtn" onclick="downloadGlossary('sel')">↓ Выбранные (0)</button>
+        </div>
+      </div>
+      <div class="row" id="gTopicChips" style="margin-bottom:12px"></div>
+      <div id="glossary"></div>
+    </div>
+  </div>
+
+  <div class="sub" style="margin-top:18px">Демо-данные. Источник правды — <code>data.json</code>, который перезаписывает агент. Звёзды, добавленные компании и сохранённые файлы хранятся на вашем устройстве.</div>
+</div>
+
+<script id="fallbackData" type="application/json">{
+  "meta": { "updated": "2026-07-29T08:00:00Z", "range_label": "8 недель" },
+  "kpi": { "new_week": 14, "new_week_delta_pct": 40, "total": 212, "academic": 38, "new_terms": 5 },
+  "topics": [
+    { "id": "agmgmt", "label": "Агентный менеджмент", "color": "#2a78d6" },
+    { "id": "kya",    "label": "KYA / доверие",       "color": "#eb6834" },
+    { "id": "token",  "label": "Токенизация",         "color": "#1baf7a" },
+    { "id": "agcom",  "label": "Агентная коммерция",  "color": "#eda100" },
+    { "id": "reg",    "label": "Регулирование",       "color": "#e87ba4" }
+  ],
+  "regions": [
+    { "id": "g",  "label": "Глобальные лидеры", "desc": "США/ЕС — где задаётся тренд и формируются стандарты" },
+    { "id": "w",  "label": "Остальной мир",     "desc": "прочие рынки, где идёт адаптация (MENA, Азия, Латам)" },
+    { "id": "ru", "label": "РФ",                "desc": "российский рынок — целевой" }
+  ],
+  "source_types": [
+    { "id": "industry", "label": "Индустрия",     "value": 46, "color": "#2a78d6" },
+    { "id": "news",     "label": "Новости",       "value": 24, "color": "#eb6834" },
+    { "id": "academic", "label": "Академические", "value": 18, "color": "#1baf7a" },
+    { "id": "reg",      "label": "Регулирование", "value": 12, "color": "#eda100" }
+  ],
+  "momentum": {
+    "weeks": ["н-7","н-6","н-5","н-4","н-3","н-2","н-1","эта"],
+    "series": {
+      "agmgmt": [1,1,2,2,3,3,4,5],
+      "kya":    [0,1,1,2,3,4,5,6],
+      "token":  [2,2,3,3,3,4,4,5],
+      "agcom":  [1,2,2,3,4,5,6,7],
+      "reg":    [0,0,1,1,2,2,3,3]
+    }
+  },
+  "emerging": [
+    { "term": "KYA",                 "note": "9 упоминаний",  "status": "up" },
+    { "term": "AP2 / x402",          "note": "7 упоминаний",  "status": "up" },
+    { "term": "agent governance",    "note": "6 упоминаний",  "status": "up" },
+    { "term": "principal-agent + AI","note": "впервые",       "status": "new" }
+  ],
+  "new_tags": [
+    { "tag": "ACP", "facet": "Тема", "note": "новый протокол агентной коммерции, смежно с AP2/x402" },
+    { "tag": "agentic mesh", "facet": "Тема", "note": "архитектура оркестрации агентов (McKinsey)" }
+  ],
+  "glossary": [
+    { "term": "Токенизация", "topic": "token", "mentions": 42, "def": "Перенос права на актив в цифровую запись в реестре, которой можно управлять программно. Ускоряет расчёты, снижает порог входа, делает активы дробными." },
+    { "term": "Agentic commerce (агентная коммерция)", "topic": "agcom", "mentions": 31, "def": "Модель, где ИИ-агенты сами ищут, сравнивают, торгуются и покупают за человека. McKinsey оценивает рынок до $5 трлн к 2030." },
+    { "term": "KYA (Know Your Agent)", "topic": "kya", "mentions": 24, "def": "Верификация ИИ-агента перед выдачей доступа и приёмом оплаты: идентичность агента, мандат, лимиты, аудит. Аналог KYC, но для агентов." },
+    { "term": "RWA (real-world assets)", "topic": "token", "mentions": 19, "def": "Токенизированные реальные активы — облигации, фонды, недвижимость, private credit. Свыше $23 млрд уже on-chain." },
+    { "term": "ЦФА (цифровые финансовые активы)", "topic": "token", "mentions": 17, "def": "Правовая форма токена в РФ (259-ФЗ): денежные требования, права по ценным бумагам, участие в капитале. Ближе к финансовому инструменту." },
+    { "term": "Principal-agent theory (агентская теория)", "topic": "agmgmt", "mentions": 15, "def": "Классическая проблема управления: как принципал заставляет агента действовать в своих интересах. Переносится на ИИ-агентов — теоретический якорь агентного менеджмента." },
+    { "term": "KYC (Know Your Customer)", "topic": "kya", "mentions": 14, "def": "Установление и проверка личности клиента, скрининг по спискам, оценка риска и мониторинг. Основа доверия; KYA — надстройка над ним для агентов." },
+    { "term": "x402", "topic": "agcom", "mentions": 13, "def": "Открытый протокол Coinbase, оживляющий код HTTP 402: агент мгновенно платит стейблкоином за один запрос. Под управлением Linux Foundation." },
+    { "term": "AP2 (Agent Payments Protocol)", "topic": "agcom", "mentions": 12, "def": "Протокол Google для авторизации и намерения платежей агентов; использует x402 как расчётный слой." },
+    { "term": "Agent governance", "topic": "agmgmt", "mentions": 11, "def": "Правила, мандаты, лимиты и контроль автономных агентов — как обеспечить подотчётность и ответственность за их действия." },
+    { "term": "Stablecoin (стейблкоин)", "topic": "agcom", "mentions": 10, "def": "Криптомонета, привязанная к валюте (напр. USDC). Расчётный актив агентных платежей — быстрые и дешёвые микротранзакции." },
+    { "term": "УЦП (утилитарные цифровые права)", "topic": "token", "mentions": 9, "def": "«Полезное» цифровое право (товар, услуга, доступ) через инвестплатформы (259-ФЗ). Для лояльности часто удобнее ЦФА." },
+    { "term": "Scoped mandate (ограниченный мандат)", "topic": "kya", "mentions": 8, "def": "Заданные границы полномочий агента: что он вправе оплачивать, лимиты, категории, срок. Механизм контроля в KYA." },
+    { "term": "MCP (Model Context Protocol)", "topic": "agmgmt", "mentions": 7, "def": "Стандарт подключения инструментов и контекста к ИИ-моделям; один из протоколов агентной инфраструктуры." },
+    { "term": "A2A (Agent-to-Agent)", "topic": "agmgmt", "mentions": 6, "def": "Протокол взаимодействия агентов между собой — обмен данными и координация в мультиагентных системах." },
+    { "term": "Audit-log (журнал действий)", "topic": "kya", "mentions": 6, "def": "Неизменяемый журнал операций агента, привязанный к его идентичности. Обеспечивает подотчётность и снижает fraud." },
+    { "term": "BUIDL", "topic": "token", "mentions": 5, "def": "Токенизированный фонд денежного рынка BlackRock — флагманский пример институциональной токенизации." },
+    { "term": "ACP (Agentic Commerce Protocol)", "topic": "agcom", "mentions": 4, "def": "Формирующийся протокол агентной коммерции; новый кандидат-стандарт наряду с AP2 и x402." },
+    { "term": "Breakage", "topic": "token", "mentions": 4, "def": "Несписанные баллы/токены лояльности — один из источников экономики программы." },
+    { "term": "Loyalty OS", "topic": "agcom", "mentions": 3, "def": "Открытая нейтральная платформа лояльности поверх платежей и кошелька, а не закрытая бонусная программа." }
+  ],
+  "materials": [
+    { "id": "m1", "date": "2026-07-29", "title": "McKinsey: agentic commerce до $5 трлн к 2030", "summary": "ИИ-агенты сами ищут, торгуются и покупают; лояльность переосмысливается первой.", "url": "https://www.digitalcommerce360.com/2025/10/20/mckinsey-forecast-5-trillion-agentic-commerce-sales-2030/", "topic": "agcom", "region": "g", "source_type": "industry", "entity_type": "исследование", "saved": false },
+    { "id": "m2", "date": "2026-07-28", "title": "Skyfire привлекла $8,5 млн на инфраструктуру KYA", "summary": "Основатели — экс-Google и Ripple; среди инвесторов Ripple. Верификация и платежи агентов.", "url": "https://firecode.ru/blog/skyfire-privlekla-8-5-millionov-dollarov-dlya-sozdaniya-sistemy-avtonomnyh-platezhej-dlya-agentov-ii", "topic": "kya", "region": "g", "source_type": "industry", "entity_type": "сделка/раунд", "saved": false },
+    { "id": "m3", "date": "2026-07-27", "title": "x402 передан под Linux Foundation; Google, Visa, Mastercard в коалиции", "summary": "Открытый протокол платежей агентов; стандарт формализуется.", "url": "https://www.datawallet.com/crypto/x402-protocol-explained", "topic": "agcom", "region": "g", "source_type": "news", "entity_type": "протокол/стандарт", "saved": false },
+    { "id": "m4", "date": "2026-07-25", "title": "Ларри Финк: токенизация как «интернет 1996»", "summary": "Единый регулируемый кошелёк держит платежи и токенизированные активы.", "url": "https://www.blackrock.com/corporate/investor-relations/larry-fink-annual-chairmans-letter", "topic": "token", "region": "g", "source_type": "industry", "entity_type": "компания", "saved": false },
+    { "id": "m5", "date": "2026-07-24", "title": "Ripple × BlackRock: RWA свыше $23 млрд on-chain", "summary": "Обзор рынка токенизации реальных активов и роли ключевых игроков.", "url": "https://www.okx.com/en-gb/learn/ripple-blackrock-tokenized-finance", "topic": "token", "region": "g", "source_type": "industry", "entity_type": "компания", "saved": false },
+    { "id": "m6", "date": "2026-07-22", "title": "arXiv: principal-agent theory для автономных ИИ-агентов", "summary": "Перенос классической агентской проблемы на ИИ; механизмы контроля через мандат и аудит.", "url": "https://arxiv.org/", "topic": "agmgmt", "region": "g", "source_type": "academic", "entity_type": "исследование", "saved": false },
+    { "id": "m7", "date": "2026-07-20", "title": "Visa и Mastercard запустили агентные платёжные инструменты", "summary": "Крупные платёжные сети выходят в agentic payments.", "url": "https://www.digitalcommerce360.com/2025/10/16/visa-mastercard-both-launch-agentic-ai-payments-tools/", "topic": "agcom", "region": "g", "source_type": "news", "entity_type": "компания", "saved": false },
+    { "id": "m8", "date": "2026-07-18", "title": "Разбор письма Финка: токенизация как демократизация доступа", "summary": "Русскоязычный обзор: дофаминовый шум, ИИ-неравенство, прецеденты Индии и Японии.", "url": "https://habr.com/ru/companies/finam_broker/articles/1017000/", "topic": "token", "region": "ru", "source_type": "news", "entity_type": "исследование", "saved": false },
+    { "id": "m9", "date": "2026-07-15", "title": "ЦБ РФ: обновление регулирования ЦФА и цифровых прав", "summary": "Развилки правовой формы токена (ЦФА/УЦП), AML, защита клиента.", "url": "https://www.cbr.ru/", "topic": "reg", "region": "ru", "source_type": "reg", "entity_type": "регулятор", "saved": false }
+  ],
+  "watchlist": [
+    { "name": "BlackRock",         "region": "g",  "focus": ["token"],         "status": "растёт",   "signal": "BUIDL: +фонды",        "date": "2026-07-25" },
+    { "name": "Ripple",            "region": "g",  "focus": ["token","agent"], "status": "растёт",   "signal": "RWA на XRPL",          "date": "2026-07-24" },
+    { "name": "Coinbase",          "region": "g",  "focus": ["agent"],         "status": "растёт",   "signal": "x402 → Linux Foundation","date": "2026-07-27" },
+    { "name": "Skyfire",           "region": "g",  "focus": ["agent"],         "status": "новое",    "signal": "раунд $8,5M · KYA",    "date": "2026-07-28" },
+    { "name": "Visa / Mastercard", "region": "g",  "focus": ["agent"],         "status": "активен",  "signal": "агентные платежи",     "date": "2026-07-20" },
+    { "name": "Google (AP2)",      "region": "g",  "focus": ["agent"],         "status": "активен",  "signal": "x402 как рельс",       "date": "2026-07-27" },
+    { "name": "Сбер",              "region": "ru", "focus": ["token","agent"], "status": "стабильно","signal": "ЦФА + ИИ-ассистент",   "date": "2026-07-10" },
+    { "name": "Т-Банк",            "region": "ru", "focus": ["token","agent"], "status": "активен",  "signal": "лояльность + ИИ",      "date": "2026-07-14" },
+    { "name": "Атомайз",           "region": "ru", "focus": ["token"],         "status": "растёт",   "signal": "ЦФА-платформа",        "date": "2026-07-16" },
+    { "name": "Яндекс",            "region": "ru", "focus": ["agent"],         "status": "активен",  "signal": "ИИ-агенты",            "date": "2026-07-12" },
+    { "name": "МТС Финтех",        "region": "ru", "focus": ["token","agent"], "status": "наш",      "signal": "токен-лояльность + агент","date": "2026-07-29" }
+  ],
+  "radar": [
+    { "title": "Новый финтех-стартап (РФ) запустил токен-лояльность с ИИ-подбором", "note": "нет в watchlist · совпадает с нашей моделью", "region": "ru", "level": "средняя" },
+    { "title": "Протокол ACP (Agentic Commerce Protocol) набирает адаптацию", "note": "новое направление · смежно с AP2 / x402", "region": "g", "level": "наблюдать" }
+  ]
+}
+</script>
+
+<script>
+const STATE={region:"all",topic:"all",src:"all",gtopic:"all",view:"dash",data:null};
+const LS_ADD="tt_user_companies";
+const $=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+async function load(){
+  try{const r=await fetch('data.json',{cache:'no-store'});if(!r.ok)throw 0;STATE.data=await r.json();}
+  catch(e){try{STATE.data=JSON.parse($('fallbackData').textContent);}catch(_){$('feed').innerHTML='<div class="mut small">Не удалось загрузить data.json.</div>';return;}}
+  mergeUserCompanies();
+  render();
+}
+function mergeUserCompanies(){
+  try{const add=JSON.parse(localStorage.getItem(LS_ADD)||"[]");
+    add.forEach(c=>{if(!STATE.data.watchlist.some(w=>w.name===c.name))STATE.data.watchlist.unshift(c);});}catch(e){}
+}
+function topicMap(){const m={};STATE.data.topics.forEach(t=>m[t.id]=t);return m}
+function regionLabel(id){const r=STATE.data.regions.find(x=>x.id===id);return r?r.label:id}
+
+function setView(v){STATE.view=v;
+  $('view-dash').classList.toggle('hidden',v!=='dash');
+  $('view-gloss').classList.toggle('hidden',v!=='gloss');
+  $('tab-dash').classList.toggle('on',v==='dash');
+  $('tab-gloss').classList.toggle('on',v==='gloss');
+  if(v==='gloss')renderGlossary();
+}
+
+function render(){
+  const d=STATE.data;
+  $('updated').textContent='обновлено '+new Date(d.meta.updated).toLocaleString('ru-RU',{day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})+' · окно '+d.meta.range_label;
+  $('kpis').innerHTML=[['новых за неделю',d.kpi.new_week,'+'+d.kpi.new_week_delta_pct+'%'],['всего отслежено',d.kpi.total,''],['академических',d.kpi.academic,''],['терминов в базе',(d.glossary||[]).length,'']]
+    .map(k=>`<div class="card kpi"><div class="l">${k[0]}</div><div class="v">${k[1]} ${k[2]?'<span class="d">'+k[2]+'</span>':''}</div></div>`).join('');
+
+  const rc=$('regions');rc.innerHTML='';
+  [['all','Все'],...d.regions.map(r=>[r.id,r.label,r.desc])].forEach(a=>{const b=document.createElement('button');b.className='chip'+(STATE.region===a[0]?' on':'');b.textContent=a[1];if(a[2])b.title=a[2];b.onclick=()=>{STATE.region=a[0];render();};rc.appendChild(b);});
+  const rDesc=STATE.region==='all'?'Показаны все регионы. Выберите регион, чтобы сузить ленту, watchlist и радар.':((d.regions.find(r=>r.id===STATE.region)||{}).desc||'');
+  $('regionDesc').textContent=STATE.region==='all'?rDesc:(regionLabel(STATE.region)+' — '+rDesc);
+
+  $('mlegend').innerHTML=d.topics.map(t=>`<span><span class="dot" style="background:${t.color}"></span>${esc(t.label)}</span>`).join('');drawMomentum();
+  $('slegend').innerHTML=d.source_types.map(s=>`<span><span class="dot" style="background:${s.color}"></span>${esc(s.label)} ${s.value}%</span>`).join('');drawDonut();
+
+  $('emerging').innerHTML=d.emerging.map(e=>`<div class="muted-row"><span style="font-family:ui-monospace,Menlo,monospace">${esc(e.term)}</span><span class="small" style="color:${e.status==='new'?'var(--accent)':'var(--up)'}">${e.status==='up'?'↑ ':''}${esc(e.note)}</span></div>`).join('');
+  $('newtags').innerHTML=d.new_tags.map((t,i)=>`<div class="muted-row"><span><b>${esc(t.tag)}</b> <span class="small mut">· ${esc(t.facet)}</span><div class="small mut">${esc(t.note)}</div></span><span class="row"><button class="iconbtn" title="утвердить" onclick="approveTag(${i})">✓</button><button class="iconbtn" title="отклонить" onclick="approveTag(${i})">✕</button></span></div>`).join('')||'<div class="small mut">нет новых тегов</div>';
+
+  const rsel=$('ac-region');if(rsel)rsel.innerHTML=d.regions.map(r=>`<option value="${r.id}">${esc(r.label)}</option>`).join('');
+  renderRadar();renderWatchlist();buildFeedChips();applyFilters();buildGlossChips();
+}
+
+let chM,chD;
+function drawMomentum(){const d=STATE.data;if(chM)chM.destroy();chM=new Chart($('momentum'),{type:'line',
+  data:{labels:d.momentum.weeks,datasets:d.topics.map(t=>({label:t.label,data:d.momentum.series[t.id],borderColor:t.color,backgroundColor:t.color,borderWidth:2,tension:.35,pointRadius:0,pointHoverRadius:4}))},
+  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},interaction:{mode:'index',intersect:false},scales:{y:{beginAtZero:true,ticks:{precision:0,color:'#9a9aa6'},grid:{color:'#eeeef4'}},x:{grid:{display:false},ticks:{color:'#9a9aa6'}}}}});}
+function drawDonut(){const d=STATE.data;if(chD)chD.destroy();chD=new Chart($('donut'),{type:'doughnut',
+  data:{labels:d.source_types.map(s=>s.label),datasets:[{data:d.source_types.map(s=>s.value),backgroundColor:d.source_types.map(s=>s.color),borderColor:'#fff',borderWidth:2}]},
+  options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{display:false}}}});}
+
+function renderRadar(){const d=STATE.data,rows=d.radar.filter(r=>STATE.region==='all'||r.region===STATE.region);
+  $('radar').innerHTML=rows.map(r=>`<div class="alert"><span style="color:var(--warn)">▲</span><div style="flex:1"><div style="font-size:14px;font-weight:600">${esc(r.title)}</div><div class="small mut">${esc(r.note)} · ${esc(regionLabel(r.region))}</div></div><span class="st" style="color:var(--warn);background:#fff">${esc(r.level)}</span></div>`).join('')||'<div class="small mut">по этому региону сигналов нет</div>';}
+
+const stColor={'растёт':['#199e70','#e7f5ee'],'новое':['#185fa5','#e6f1fb'],'активен':['#5f5e5a','#f1f1ee'],'стабильно':['#5f5e5a','#f1f1ee'],'наблюдать':['#854f0b','#faeeda'],'на анализ':['#854f0b','#faeeda'],'наш':['#4a3aa7','#efeefb']};
+const focLab={t:'токены',token:'токены',a:'ИИ-агенты',agent:'ИИ-агенты'};
+const focCol={t:'#1baf7a',token:'#1baf7a',a:'#2a78d6',agent:'#2a78d6'};
+function renderWatchlist(){const d=STATE.data,rows=d.watchlist.filter(w=>STATE.region==='all'||w.region===STATE.region);
+  $('wcount').textContent=rows.length+' компаний';
+  $('watchlist').innerHTML=rows.map(w=>{const sc=stColor[w.status]||stColor['активен'];
+    const foc=(w.focus||[]).map(f=>`<span class="tag"><span class="dot" style="background:${focCol[f]}"></span>${focLab[f]}</span>`).join(' ');
+    const site=w.site?` · <a href="${esc(w.site)}" target="_blank" rel="noopener">сайт</a>`:'';
+    return `<div class="wl"><div style="flex:1"><div class="row" style="gap:8px"><span style="font-weight:600">${esc(w.name)}</span><span class="pill">${esc(regionLabel(w.region))}</span>${w.user?'<span class="pill" style="color:var(--accent)">добавлено</span>':''}</div><div class="row" style="gap:6px;margin-top:5px">${foc}<span class="small mut">${site}</span></div></div><div style="text-align:right"><div class="small mut" style="margin-bottom:5px">${esc(w.signal||'')}</div><span class="st" style="color:${sc[0]};background:${sc[1]}">${esc(w.status)}</span></div></div>`;}).join('');}
+
+function toggleAdd(){$('addForm').classList.toggle('hidden');}
+function addCompany(){
+  const name=$('ac-name').value.trim();if(!name){alert('Укажите название компании.');return;}
+  const c={name,site:$('ac-site').value.trim(),region:$('ac-region').value,focus:[...($('ac-t').checked?['token']:[]),...($('ac-a').checked?['agent']:[])],status:'на анализ',signal:'агент подбирает ключевые слова',date:new Date().toISOString().slice(0,10),user:true};
+  try{const add=JSON.parse(localStorage.getItem(LS_ADD)||"[]");add.unshift(c);localStorage.setItem(LS_ADD,JSON.stringify(add));}catch(e){}
+  STATE.data.watchlist.unshift(c);
+  $('ac-name').value='';$('ac-site').value='';$('ac-t').checked=false;$('ac-a').checked=false;
+  toggleAdd();renderWatchlist();
+}
+
+function buildFeedChips(){const d=STATE.data;
+  const tc=$('topicChips');tc.innerHTML='';[['all','Все темы'],...d.topics.map(t=>[t.id,t.label])].forEach(([id,lab])=>{const b=document.createElement('button');b.className='chip'+(STATE.topic===id?' on':'');b.textContent=lab;b.onclick=()=>{STATE.topic=id;buildFeedChips();applyFilters();};tc.appendChild(b);});
+  const sc=$('srcChips');sc.innerHTML='';[['all','Все источники'],...d.source_types.map(s=>[s.id,s.label])].forEach(([id,lab])=>{const b=document.createElement('button');b.className='chip'+(STATE.src===id?' on':'');b.textContent=lab;b.onclick=()=>{STATE.src=id;buildFeedChips();applyFilters();};sc.appendChild(b);});}
+function applyFilters(){const d=STATE.data,TM=topicMap(),q=($('q').value||'').toLowerCase();
+  const rows=d.materials.filter(m=>(STATE.region==='all'||m.region===STATE.region)&&(STATE.topic==='all'||m.topic===STATE.topic)&&(STATE.src==='all'||m.source_type===STATE.src)&&(!q||(m.title+' '+m.summary).toLowerCase().includes(q)));
+  $('feed').innerHTML=rows.map(m=>{const t=TM[m.topic]||{label:m.topic,color:'#999'};const stLabel=(d.source_types.find(s=>s.id===m.source_type)||{}).label||m.source_type;
+    return `<div class="item"><span class="dt">${esc(m.date.slice(8,10))}.${esc(m.date.slice(5,7))}</span><div style="flex:1;min-width:0"><div class="ttl">${esc(m.title)}</div><div class="small mut" style="margin-bottom:7px">${esc(m.summary)}</div><div class="row" style="gap:6px"><span class="tag"><span class="dot" style="background:${t.color}"></span>${esc(t.label)}</span><span class="pill">${esc(stLabel)}</span><span class="pill">${esc(regionLabel(m.region))}</span></div></div><div class="row" style="gap:4px;align-items:flex-start"><button class="iconbtn star ${m.saved?'on':''}" title="в обзор литературы" aria-pressed="${!!m.saved}" onclick="toggleSave('${m.id}')">★</button><button class="iconbtn" title="сохранить на диск" onclick="saveOne('${m.id}')">⭳</button><a class="iconbtn" title="открыть источник" href="${esc(m.url)}" target="_blank" rel="noopener">↗</a></div></div>`;}).join('')||'<div class="small mut">ничего не найдено по фильтрам</div>';
+  updateExport();}
+function toggleSave(id){const m=STATE.data.materials.find(x=>x.id===id);if(m){m.saved=!m.saved;applyFilters();}}
+function updateExport(){$('exportBtn').textContent=`↓ Экспорт подборки (${STATE.data.materials.filter(m=>m.saved).length})`;}
+function approveTag(i){STATE.data.new_tags.splice(i,1);render();}
+
+function buildGlossChips(){const d=STATE.data;const gc=$('gTopicChips');gc.innerHTML='';[['all','Все темы'],...d.topics.map(t=>[t.id,t.label])].forEach(([id,lab])=>{const b=document.createElement('button');b.className='chip'+(STATE.gtopic===id?' on':'');b.textContent=lab;b.onclick=()=>{STATE.gtopic=id;buildGlossChips();renderGlossary();};gc.appendChild(b);});}
+function renderGlossary(){const d=STATE.data,TM=topicMap();if(!d.glossary){$('glossary').innerHTML='';return;}
+  const q=($('gq').value||'').toLowerCase(),sort=$('gsort').value;
+  let rows=d.glossary.filter(g=>(STATE.gtopic==='all'||g.topic===STATE.gtopic)&&(!q||(g.term+' '+g.def).toLowerCase().includes(q)));
+  rows=rows.slice().sort(sort==='alpha'?(a,b)=>a.term.localeCompare(b.term,'ru'):(a,b)=>b.mentions-a.mentions);
+  $('gcount').textContent='· '+rows.length;
+  $('glossary').innerHTML=rows.map(g=>{const t=TM[g.topic]||{label:g.topic,color:'#999'};const gi=STATE.data.glossary.indexOf(g);
+    return `<div class="gitem"><div class="row between" style="align-items:flex-start"><div style="font-size:15px;font-weight:600">${esc(g.term)}</div><div class="row" style="gap:8px;white-space:nowrap"><span class="small mut">${g.mentions} упом.</span><button class="iconbtn star ${g.sel?'on':''}" title="выбрать для скачивания" aria-pressed="${!!g.sel}" onclick="toggleGloss(${gi})">★</button></div></div><div class="small" style="color:var(--ink);margin:5px 0 7px;line-height:1.5">${esc(g.def)}</div><span class="tag"><span class="dot" style="background:${t.color}"></span>${esc(t.label)}</span></div>`;}).join('')||'<div class="small mut">ничего не найдено</div>';
+  updateGlossSel();}
+function toggleGloss(i){const g=STATE.data.glossary[i];if(g){g.sel=!g.sel;renderGlossary();}}
+function updateGlossSel(){const n=(STATE.data.glossary||[]).filter(g=>g.sel).length;const b=$('gselBtn');if(b)b.textContent=`↓ Выбранные (${n})`;}
+function mdOfTerm(g){return `## ${g.term}\n\n${g.def}\n\n- тема: ${(topicMap()[g.topic]||{}).label||g.topic}\n- упоминаний: ${g.mentions}\n`;}
+function downloadGlossary(mode){const all=STATE.data.glossary||[];const list=mode==='sel'?all.filter(g=>g.sel):all;
+  if(!list.length){alert(mode==='sel'?'Отметьте термины звездой для скачивания.':'Список терминов пуст.');return;}
+  const md=`# Термины — ${mode==='sel'?'выбранные':'все'} (${list.length})\n\n`+list.map(mdOfTerm).join('\n');
+  download(`terms-${mode==='sel'?'selected':'all'}.md`,md);}
+
+function mdOf(m){return `# ${m.title}\n\n${m.summary}\n\n- дата: ${m.date}\n- тема: ${(topicMap()[m.topic]||{}).label||m.topic}\n- регион: ${regionLabel(m.region)}\n- тип источника: ${m.source_type}\n- ссылка: ${m.url}\n`;}
+function download(name,text,mime='text/markdown'){const b=new Blob([text],{type:mime+';charset=utf-8'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(u);}
+function slug(s){return s.toLowerCase().replace(/[^a-zа-я0-9]+/gi,'-').replace(/^-|-$/g,'').slice(0,50);}
+function saveOne(id){const m=STATE.data.materials.find(x=>x.id===id);if(m)download(`${m.date}-${slug(m.title)}.md`,mdOf(m));}
+async function exportSelection(){const sel=STATE.data.materials.filter(m=>m.saved);if(!sel.length){alert('Отметьте материалы звездой «в обзор литературы».');return;}
+  const md='# Обзор литературы — подборка\n\n'+sel.map(mdOf).join('\n---\n\n');
+  if(window.showSaveFilePicker){try{const h=await window.showSaveFilePicker({suggestedName:'lit-review.md',types:[{description:'Markdown',accept:{'text/markdown':['.md']}}]});const w=await h.createWritable();await w.write(md);await w.close();return;}catch(e){if(e.name==='AbortError')return;}}
+  download('lit-review.md',md);}
+load();
+</script>
+</body>
+</html>
