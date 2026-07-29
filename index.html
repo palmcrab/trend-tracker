@@ -65,6 +65,7 @@ a{color:var(--accent);text-decoration:none}
     </div>
     <div class="row">
       <div class="row" id="regions"></div>
+      <button class="btn" id="shareBtn" onclick="copyLink()">Поделиться</button>
       <button class="btn" onclick="location.reload()">↻ Обновить</button>
     </div>
   </div>
@@ -257,6 +258,15 @@ const LS_ADD="tt_user_companies";
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
+function copyLink(){
+  const url=location.origin+location.pathname;
+  const b=$('shareBtn');
+  const done=()=>{const t=b.textContent;b.textContent='Скопировано ✓';setTimeout(()=>b.textContent=t,1500);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){
+    navigator.clipboard.writeText(url).then(done).catch(()=>prompt('Скопируйте ссылку:',url));
+  }else{prompt('Скопируйте ссылку:',url);}
+}
+
 async function load(){
   try{const r=await fetch('data.json',{cache:'no-store'});if(!r.ok)throw 0;STATE.data=await r.json();}
   catch(e){try{STATE.data=JSON.parse($('fallbackData').textContent);}catch(_){$('feed').innerHTML='<div class="mut small">Не удалось загрузить data.json.</div>';return;}}
@@ -353,11 +363,23 @@ function renderGlossary(){const d=STATE.data,TM=topicMap();if(!d.glossary){$('gl
   updateGlossSel();}
 function toggleGloss(i){const g=STATE.data.glossary[i];if(g){g.sel=!g.sel;renderGlossary();}}
 function updateGlossSel(){const n=(STATE.data.glossary||[]).filter(g=>g.sel).length;const b=$('gselBtn');if(b)b.textContent=`↓ Выбранные (${n})`;}
-function mdOfTerm(g){return `## ${g.term}\n\n${g.def}\n\n- тема: ${(topicMap()[g.topic]||{}).label||g.topic}\n- упоминаний: ${g.mentions}\n`;}
+function wordDoc(list,title){
+  const body=list.map(g=>{const t=topicMap()[g.topic]||{label:g.topic,color:'#333333'};
+    return `<h2 style="font-family:Calibri,sans-serif;font-size:15pt;color:${t.color};margin:16pt 0 4pt 0">${esc(g.term)}</h2>`+
+      `<p style="font-family:Calibri,sans-serif;font-size:11.5pt;color:#1c1c28;line-height:1.45;margin:0 0 4pt 0">${esc(g.def)}</p>`+
+      `<p style="font-family:Calibri,sans-serif;font-size:9.5pt;color:#6b6b76;margin:0 0 12pt 0">Тема: ${esc(t.label)}&nbsp;&nbsp;·&nbsp;&nbsp;Упоминаний: ${g.mentions}</p>`;
+  }).join('');
+  return '<!DOCTYPE html><html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40">'+
+    '<head><meta charset="utf-8"><title>'+esc(title)+'</title></head>'+
+    '<body style="font-family:Calibri,sans-serif">'+
+    '<h1 style="font-family:Calibri,sans-serif;font-size:22pt;color:#1c1c28;margin:0 0 2pt 0">'+esc(title)+'</h1>'+
+    '<p style="font-family:Calibri,sans-serif;font-size:10pt;color:#8a8796;border-bottom:1px solid #d9d9e3;padding-bottom:8pt;margin:0 0 8pt 0">Трекер трендов — агентный менеджмент</p>'+
+    body+'</body></html>';
+}
 function downloadGlossary(mode){const all=STATE.data.glossary||[];const list=mode==='sel'?all.filter(g=>g.sel):all;
   if(!list.length){alert(mode==='sel'?'Отметьте термины звездой для скачивания.':'Список терминов пуст.');return;}
-  const md=`# Термины — ${mode==='sel'?'выбранные':'все'} (${list.length})\n\n`+list.map(mdOfTerm).join('\n');
-  download(`terms-${mode==='sel'?'selected':'all'}.md`,md);}
+  const title=`Термины — ${mode==='sel'?'выбранные':'все'} (${list.length})`;
+  download(`terms-${mode==='sel'?'selected':'all'}.doc`, wordDoc(list,title), 'application/msword');}
 
 function mdOf(m){return `# ${m.title}\n\n${m.summary}\n\n- дата: ${m.date}\n- тема: ${(topicMap()[m.topic]||{}).label||m.topic}\n- регион: ${regionLabel(m.region)}\n- тип источника: ${m.source_type}\n- ссылка: ${m.url}\n`;}
 function download(name,text,mime='text/markdown'){const b=new Blob([text],{type:mime+';charset=utf-8'});const u=URL.createObjectURL(b);const a=document.createElement('a');a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(u);}
