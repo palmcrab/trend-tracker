@@ -57,29 +57,31 @@ a{color:var(--accent);text-decoration:none}
 .hidden{display:none}
 .dayhdr{font-size:12px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.03em;margin:16px 0 2px;padding-top:12px;border-top:1px solid var(--bd)}
 .dayhdr:first-child{border-top:0;padding-top:0;margin-top:2px}
+.stickyhead{position:sticky;top:0;z-index:20;background:var(--bg);padding:12px 0 8px;margin-bottom:14px;border-bottom:1px solid var(--bd)}
 .form{background:#faf9ff;border:1px solid #e5e1f7;border-radius:10px;padding:12px;margin-bottom:12px}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="row between" style="margin-bottom:10px">
+  <div class="stickyhead">
+    <div class="row between" style="margin-bottom:8px">
+      <div>
+        <h1>Трекер трендов — агентный менеджмент</h1>
+        <div class="sub" id="updated"></div>
+      </div>
+      <div class="row">
+        <div class="row" id="regions"></div>
+        <button class="btn" id="rebuildBtn" onclick="triggerRebuild(this)">⟳ Собрать заново</button>
+        <button class="btn" id="shareBtn" onclick="copyLink()">Поделиться</button>
+        <button class="btn" onclick="location.reload()">↻ Обновить</button>
+      </div>
+    </div>
+    <div class="sub" id="regionDesc" style="margin:-2px 0 8px"></div>
     <div>
-      <h1>Трекер трендов — агентный менеджмент</h1>
-      <div class="sub" id="updated"></div>
+      <button class="tab on" id="tab-dash" onclick="setView('dash')">Дашборд</button>
+      <button class="tab" id="tab-fav" onclick="setView('fav')">Избранное <span class="small mut" id="favCount"></span></button>
+      <button class="tab" id="tab-gloss" onclick="setView('gloss')">Термины</button>
     </div>
-    <div class="row">
-      <div class="row" id="regions"></div>
-      <button class="btn" id="shareBtn" onclick="copyLink()">Поделиться</button>
-      <button class="btn" onclick="location.reload()">↻ Обновить</button>
-    </div>
-  </div>
-
-  <div class="sub" id="regionDesc" style="margin:-2px 0 14px"></div>
-
-  <div style="border-bottom:1px solid var(--bd);margin-bottom:16px">
-    <button class="tab on" id="tab-dash" onclick="setView('dash')">Дашборд</button>
-    <button class="tab" id="tab-fav" onclick="setView('fav')">Избранное <span class="small mut" id="favCount"></span></button>
-    <button class="tab" id="tab-gloss" onclick="setView('gloss')">Термины</button>
   </div>
 
   <div id="view-dash">
@@ -283,9 +285,20 @@ a{color:var(--accent);text-decoration:none}
 const STATE={region:"all",topic:"all",src:"all",gtopic:"all",dateRange:0,view:"dash",data:null};
 const LS_ADD="tt_user_companies";
 const LS_SAVED="tt_saved_materials";
+// URL воркера-посредника для запуска сбора данных (см. cloudflare_worker.js).
+// Пусто = кнопка «Собрать заново» просто подскажет, как настроить.
+const DISPATCH_URL="";
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 
+async function triggerRebuild(btn){
+  if(!DISPATCH_URL){alert('Кнопка «Собрать заново» ещё не настроена.\n\nНужно один раз развернуть бесплатный Cloudflare Worker и вставить его адрес в переменную DISPATCH_URL вверху index.html. Инструкция — в файле cloudflare_worker.js.');return;}
+  const t=btn?btn.textContent:'';if(btn){btn.textContent='Запускаю…';btn.disabled=true;}
+  try{const r=await fetch(DISPATCH_URL,{method:'POST'});let ok=r.ok;try{const j=await r.json();ok=j.ok;}catch(_){}
+    alert(ok?'Обновление данных запущено. Через 1–2 минуты нажмите «Обновить», чтобы увидеть свежие материалы.':'Не удалось запустить обновление — проверьте настройку воркера и токен.');
+  }catch(e){alert('Не удалось связаться с воркером. Проверьте адрес DISPATCH_URL.');}
+  finally{if(btn){btn.textContent=t;btn.disabled=false;}}
+}
 function copyLink(){
   const url=location.origin+location.pathname;
   const b=$('shareBtn');
