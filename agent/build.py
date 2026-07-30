@@ -1,5 +1,6 @@
 """Оркестратор: поиск -> дедупликация -> классификация -> сборка data.json.
 Запуск: python -m agent.build  (демо-режим работает без ключей)."""
+import os
 import json
 import hashlib
 import datetime as dt
@@ -162,12 +163,41 @@ def radar(new_tags, companies):
     return out
 
 
+def load_prev_materials():
+    """Прежние материалы из data.json — чтобы накапливать, а не перезаписывать."""
+    if os.path.exists(config.OUTPUT):
+        try:
+            with open(config.OUTPUT, encoding="utf-8") as f:
+                return json.load(f).get("materials", [])
+        except Exception:
+            return []
+    return []
+
+
+def _within_window(m, today):
+    try:
+        return (today - dt.date.fromisoformat(m["date"])).days <= config.WEEKS * 7
+    except Exception:
+        return True
+
+
 def build():
     raw, seen = gather()
-    materials = to_materials(raw)
-    materials.sort(key=lambda m: m["date"], reverse=True)
+    fresh = to_materials(raw)
 
+    # Накопление: сливаем свежие материалы с прежними, дедуп по url, окно WEEKS недель
     today = dt.date.today()
+    merged, seen_urls = [], set()
+    for m in fresh + load_prev_materials():
+        u = m.get("url")
+        if not u or u in seen_urls:
+            continue
+        seen_urls.add(u)
+        merged.append(m)
+    materials = [m for m in merged if _within_window(m, today)]
+    materials.sort(key=lambda m: m["date"], reverse=True)
+    materials = materials[:400]
+
     within = [m for m in materials
               if (today - dt.date.fromisoformat(m["date"])).days <= 7]
     emerging, new_tags = emerging_and_newtags(materials)
@@ -177,7 +207,7 @@ def build():
         "meta": {"updated": dt.datetime.utcnow().isoformat() + "Z",
                  "range_label": f"{config.WEEKS} недель"},
         "kpi": {"new_week": len(within), "new_week_delta_pct": 0,
-                "total": len(seen) + len(materials),
+                "total": len(materials),
                 "academic": sum(1 for m in materials if m["source_type"] == "academic"),
                 "new_terms": len(new_tags)},
         "topics": config.TOPICS,

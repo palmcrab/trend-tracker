@@ -55,6 +55,8 @@ a{color:var(--accent);text-decoration:none}
 .gitem{padding:12px 0;border-bottom:1px solid var(--bd)}
 .gitem:last-child{border-bottom:0}
 .hidden{display:none}
+.dayhdr{font-size:12px;font-weight:700;color:var(--mut);text-transform:uppercase;letter-spacing:.03em;margin:16px 0 2px;padding-top:12px;border-top:1px solid var(--bd)}
+.dayhdr:first-child{border-top:0;padding-top:0;margin-top:2px}
 .form{background:#faf9ff;border:1px solid #e5e1f7;border-radius:10px;padding:12px;margin-bottom:12px}
 </style>
 </head>
@@ -403,8 +405,12 @@ function applyFilters(){const d=STATE.data,q=($('q').value||'').toLowerCase();ST
   const qf=($('qualFilter')||{}).value||'all',sb=($('sortBy')||{}).value||'date';
   let rows=d.materials.filter(m=>(STATE.region==='all'||m.region===STATE.region)&&(STATE.topic==='all'||m.topic===STATE.topic)&&(STATE.src==='all'||m.source_type===STATE.src)&&(STATE.dateRange===0||daysSince(m.date)<=STATE.dateRange)&&qualPass(m,qf)&&(!q||(m.title+' '+m.summary).toLowerCase().includes(q)));
   rows=rows.slice().sort(sb==='cites'?(a,b)=>(b.citations||0)-(a.citations||0):(a,b)=>(a.date<b.date?1:(a.date>b.date?-1:0)));
-  $('feed').innerHTML=rows.map(rowHtml).join('')||'<div class="small mut">ничего не найдено по фильтрам</div>';
+  if(!rows.length){$('feed').innerHTML='<div class="small mut">ничего не найдено по фильтрам</div>';updateExport();return;}
+  let html='',cur=null;
+  rows.forEach(m=>{if(sb==='date'&&m.date!==cur){cur=m.date;html+=`<div class="dayhdr">${fmtDay(m.date)}</div>`;}html+=rowHtml(m);});
+  $('feed').innerHTML=html;
   updateExport();}
+function fmtDay(ds){try{return new Date(ds).toLocaleDateString('ru-RU',{day:'numeric',month:'long',year:'numeric'});}catch(e){return ds;}}
 function renderFav(){const sv=(STATE.data.materials||[]).filter(m=>m.saved);const el=$('favList');
   if(el)el.innerHTML=sv.map(rowHtml).join('')||'<div class="small mut">Пока пусто. Отмечайте материалы звездой ★ в ленте — они появятся здесь.</div>';}
 function updateFavCount(){const n=(STATE.data.materials||[]).filter(m=>m.saved).length;const a=$('favCount'),b=$('favCount2');if(a)a.textContent=n?`(${n})`:'';if(b)b.textContent=n?`· ${n}`:'';}
