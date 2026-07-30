@@ -83,11 +83,22 @@ a{color:var(--accent);text-decoration:none}
   <div id="view-dash">
     <div class="grid kpis" id="kpis" style="margin-bottom:16px"></div>
 
+    <div class="card" style="margin-bottom:16px">
+      <div class="sect-t">Новое за сутки <span class="small mut" id="freshCount"></span></div>
+      <div id="fresh"></div>
+    </div>
+
     <div class="grid" style="grid-template-columns:1.5fr 1fr;margin-bottom:16px">
       <div class="card">
-        <div class="sect-t">Динамика публикаций по подтемам</div>
+        <div class="row between" style="margin-bottom:8px">
+          <div class="sect-t" style="margin:0">Динамика публикаций по подтемам</div>
+          <select class="f" id="momSort" onchange="drawMomentum()" style="font-size:12px;padding:5px 8px">
+            <option value="asc">старые → новые</option>
+            <option value="desc">новые → старые</option>
+          </select>
+        </div>
         <div class="legend" id="mlegend"></div>
-        <div style="position:relative;height:230px"><canvas id="momentum" role="img" aria-label="Динамика публикаций по подтемам по неделям"></canvas></div>
+        <div style="position:relative;height:230px"><canvas id="momentum" role="img" aria-label="Динамика публикаций по подтемам по датам"></canvas></div>
       </div>
       <div class="card">
         <div class="sect-t">Тип источника</div>
@@ -282,7 +293,7 @@ function copyLink(){
 }
 
 async function load(){
-  try{const r=await fetch('data.json',{cache:'no-store'});if(!r.ok)throw 0;STATE.data=await r.json();}
+  try{const r=await fetch('data.json?t='+Date.now(),{cache:'no-store'});if(!r.ok)throw 0;STATE.data=await r.json();}
   catch(e){try{STATE.data=JSON.parse($('fallbackData').textContent);}catch(_){$('feed').innerHTML='<div class="mut small">Не удалось загрузить data.json.</div>';return;}}
   mergeUserCompanies();
   mergeSaved();
@@ -326,13 +337,22 @@ function render(){
   $('newtags').innerHTML=d.new_tags.map((t,i)=>`<div class="muted-row"><span><b>${esc(t.tag)}</b> <span class="small mut">· ${esc(t.facet)}</span><div class="small mut">${esc(t.note)}</div></span><span class="row"><button class="iconbtn" title="утвердить" onclick="approveTag(${i})">✓</button><button class="iconbtn" title="отклонить" onclick="approveTag(${i})">✕</button></span></div>`).join('')||'<div class="small mut">нет новых тегов</div>';
 
   const rsel=$('ac-region');if(rsel)rsel.innerHTML=d.regions.map(r=>`<option value="${r.id}">${esc(r.label)}</option>`).join('');
-  renderRadar();renderWatchlist();buildFeedChips();applyFilters();buildGlossChips();updateFavCount();
+  renderRadar();renderWatchlist();buildFeedChips();applyFilters();buildGlossChips();updateFavCount();renderFresh();
 }
+function renderFresh(){const sv=(STATE.data.materials||[]).filter(m=>daysSince(m.date)<=1);
+  const el=$('fresh');if(el)el.innerHTML=sv.slice(0,10).map(rowHtml).join('')||'<div class="small mut">Нет новых материалов за последние сутки.</div>';
+  const c=$('freshCount');if(c)c.textContent=sv.length?`(${sv.length})`:'';}
 
 let chM,chD;
-function drawMomentum(){const d=STATE.data;if(chM)chM.destroy();chM=new Chart($('momentum'),{type:'line',
-  data:{labels:d.momentum.weeks,datasets:d.topics.map(t=>({label:t.label,data:d.momentum.series[t.id],borderColor:t.color,backgroundColor:t.color,borderWidth:2,tension:.35,pointRadius:0,pointHoverRadius:4}))},
-  options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},interaction:{mode:'index',intersect:false},scales:{y:{beginAtZero:true,ticks:{precision:0,color:'#9a9aa6'},grid:{color:'#eeeef4'}},x:{grid:{display:false},ticks:{color:'#9a9aa6'}}}}});}
+function weekLabels(){const d=STATE.data;const base=new Date(d.meta.updated||Date.now());const w=d.momentum.weeks.length;const out=[];
+  for(let i=0;i<w;i++){const dt=new Date(base);dt.setDate(dt.getDate()-(w-1-i)*7);out.push(('0'+dt.getDate()).slice(-2)+'.'+('0'+(dt.getMonth()+1)).slice(-2));}return out;}
+function drawMomentum(){const d=STATE.data;if(chM)chM.destroy();
+  let labels=weekLabels();
+  let datasets=d.topics.map(t=>({label:t.label,data:d.momentum.series[t.id].slice(),borderColor:t.color,backgroundColor:t.color,borderWidth:2,tension:.35,pointRadius:2,pointHoverRadius:5}));
+  if((($('momSort')||{}).value)==='desc'){labels=labels.slice().reverse();datasets.forEach(ds=>ds.data.reverse());}
+  chM=new Chart($('momentum'),{type:'line',data:{labels,datasets},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{title:it=>'Неделя от '+it[0].label}}},interaction:{mode:'index',intersect:false},
+      scales:{y:{beginAtZero:true,ticks:{precision:0,color:'#9a9aa6'},grid:{color:'#eeeef4'}},x:{grid:{display:false},ticks:{color:'#9a9aa6',maxRotation:0}}}}});}
 function drawDonut(){const d=STATE.data;if(chD)chD.destroy();chD=new Chart($('donut'),{type:'doughnut',
   data:{labels:d.source_types.map(s=>s.label),datasets:[{data:d.source_types.map(s=>s.value),backgroundColor:d.source_types.map(s=>s.color),borderColor:'#fff',borderWidth:2}]},
   options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{display:false}}}});}
