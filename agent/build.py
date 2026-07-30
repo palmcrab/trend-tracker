@@ -18,7 +18,7 @@ def _token(term):
 
 
 def gather():
-    """Собрать сырые материалы по всем регионам и ключевым словам, без дублей."""
+    """Собрать сырые материалы: веб-поиск по регионам + академический поиск (OpenAlex)."""
     seen_urls, raw, in_run = store.load_seen(), [], set()
     for region, queries in config.KEYWORDS.items():
         for q in queries:
@@ -28,14 +28,37 @@ def gather():
                     continue
                 in_run.add(u)
                 raw.append(it)
+    for q in getattr(config, "ACADEMIC_KEYWORDS", []):
+        for it in search.search_academic(q, region="g"):
+            u = it.get("url")
+            if not u or u in in_run:
+                continue
+            in_run.add(u)
+            raw.append(it)
     return raw, seen_urls
 
 
+def quality_of(m):
+    """Оценка качества академического источника по критериям."""
+    score = 0
+    if (m.get("citations") or 0) >= config.MIN_CITATIONS:
+        score += 1
+    y = m.get("year") or 0
+    if y and y >= dt.date.today().year - config.RECENCY_YEARS:
+        score += 1
+    if (m.get("type") or "") in ("article", "journal-article"):
+        score += 1
+    if m.get("quartile") in config.GOOD_QUARTILES:
+        score += 2
+    return "высокое" if score >= 3 else ("среднее" if score >= 2 else "низкое")
+
+
 def to_materials(raw):
+    scimago = store.load_scimago(config.SCIMAGO_FILE)
     out = []
     for it in raw:
         c = classify.classify(it)
-        out.append({
+        m = {
             "id": _id(it["url"]),
             "date": it.get("published") or dt.date.today().isoformat(),
             "title": it.get("title", ""),
@@ -47,7 +70,20 @@ def to_materials(raw):
             "entity_type": "материал",
             "tags": c.get("tags", []),
             "saved": False,
-        })
+        }
+        if it.get("academic"):
+            m["source_type"] = "academic"
+            m["entity_type"] = "исследование"
+            m["citations"] = it.get("citations", 0)
+            m["year"] = it.get("year")
+            m["venue"] = it.get("venue", "")
+            m["is_oa"] = it.get("is_oa", False)
+            m["type"] = it.get("type", "")
+            m["quartile"] = scimago.get(store._issn_key(it.get("issn"))) if it.get("issn") else None
+            m["quality"] = quality_of(m)
+        out.append(m)
+    if config.QUALITY_MODE == "strict":
+        out = [m for m in out if m.get("source_type") != "academic" or m.get("quality") != "низкое"]
     return out
 
 

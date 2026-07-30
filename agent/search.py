@@ -26,6 +26,53 @@ DEMO = [
 ]
 
 
+DEMO_ACADEMIC = [
+    {"title": "Principal-agent problems in autonomous AI agent delegation", "url": "https://doi.org/10.1000/demo1", "snippet": "We extend classical principal-agent theory to autonomous AI agents, formalizing mandate, monitoring and audit mechanisms.", "published": "2025-03-10", "domain": "Journal of Management Studies", "region": "g", "academic": True, "citations": 34, "year": 2025, "venue": "Journal of Management Studies", "issn": "0022-2380", "is_oa": True, "type": "article"},
+    {"title": "Tokenized loyalty programs and the role of tradability", "url": "https://doi.org/10.1000/demo2", "snippet": "Tokenized loyalty introduces tradability, allowing customers to trade points; we model welfare and firm effects.", "published": "2025-01-22", "domain": "Marketing Science", "region": "g", "academic": True, "citations": 12, "year": 2025, "venue": "Marketing Science", "issn": "0732-2399", "is_oa": False, "type": "article"},
+    {"title": "Governance frameworks for agentic commerce", "url": "https://doi.org/10.1000/demo3", "snippet": "A framework for accountability, identity and oversight of AI agents transacting on behalf of users.", "published": "2024-11-05", "domain": "MIS Quarterly", "region": "g", "academic": True, "citations": 8, "year": 2024, "venue": "MIS Quarterly", "issn": "0276-7783", "is_oa": True, "type": "article"},
+    {"title": "Preprint: agent identity signals in marketplaces", "url": "https://doi.org/10.1000/demo4", "snippet": "Working paper exploring KYA-style identity signals; not yet peer-reviewed.", "published": "2026-02-01", "domain": "arXiv", "region": "g", "academic": True, "citations": 1, "year": 2026, "venue": "arXiv", "issn": None, "is_oa": True, "type": "preprint"},
+]
+
+
+def _abstract(inv):
+    if not inv:
+        return ""
+    pos = {}
+    for w, idxs in inv.items():
+        for i in idxs:
+            pos[i] = w
+    return " ".join(pos[k] for k in sorted(pos))[:300]
+
+
+def search_academic(query, region="g", max_results=8, since_year=None):
+    """Академический поиск через OpenAlex (бесплатно, без ключа). Возвращает работы
+    с цитируемостью, годом, журналом, ISSN и open-access."""
+    params = {"search": query, "per-page": max_results, "sort": "cited_by_count:desc"}
+    if since_year:
+        params["filter"] = f"from_publication_date:{since_year}-01-01"
+    try:
+        r = requests.get("https://api.openalex.org/works", params=params, timeout=30,
+                         headers={"User-Agent": "trend-tracker (mailto:example@example.com)"})
+        r.raise_for_status()
+        out = []
+        for w in r.json().get("results", []):
+            src = (w.get("primary_location") or {}).get("source") or {}
+            issn = src.get("issn_l") or ((src.get("issn") or [None]) or [None])[0]
+            url = w.get("doi") or (w.get("primary_location") or {}).get("landing_page_url") or w.get("id")
+            out.append({"title": w.get("title") or "", "url": url,
+                        "snippet": _abstract(w.get("abstract_inverted_index")) or (src.get("display_name") or ""),
+                        "published": w.get("publication_date") or "", "domain": src.get("display_name") or "OpenAlex",
+                        "region": region, "academic": True,
+                        "citations": w.get("cited_by_count") or 0, "year": w.get("publication_year"),
+                        "venue": src.get("display_name") or "", "issn": issn,
+                        "is_oa": bool((w.get("open_access") or {}).get("is_oa")),
+                        "type": w.get("type") or ""})
+        return out or DEMO_ACADEMIC
+    except Exception as e:
+        print("openalex error:", e)
+        return DEMO_ACADEMIC
+
+
 def search(query, region, max_results=6):
     """Вернуть список результатов вида {title,url,snippet,published,domain,region}."""
     key = os.getenv("TAVILY_API_KEY")

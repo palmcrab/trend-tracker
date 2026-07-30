@@ -6,6 +6,21 @@ WEEKS = 8                            # окно динамики (недель)
 OUTPUT = "data.json"                 # куда писать результат (рядом кладётся dashboard.html)
 COMPANIES_FILE = "companies.json"    # очередь компаний, добавленных на дашборде
 
+# --- Академический поиск (OpenAlex — бесплатно, без ключа) ---
+ACADEMIC_KEYWORDS = [
+    "principal-agent theory AI agents",
+    "tokenization loyalty program",
+    "agentic commerce autonomous agents",
+    "know your agent identity verification",
+    "digital financial assets regulation",
+]
+# --- Критерии качества академических источников ---
+MIN_CITATIONS = 5                   # порог цитируемости
+RECENCY_YEARS = 5                   # «свежесть»: последние N лет
+GOOD_QUARTILES = ("Q1", "Q2")       # приемлемые квартили журнала (Scopus/SJR)
+QUALITY_MODE = "soft"               # 'soft' — помечать и опускать; 'strict' — отсеивать слабые
+SCIMAGO_FILE = "scimago.csv"        # опц.: файл ISSN→квартиль (скачивается с scimagojr.com)
+
 TOPICS = [
     {"id": "agmgmt", "label": "Агентный менеджмент", "color": "#2a78d6"},
     {"id": "kya",    "label": "KYA / доверие",       "color": "#eb6834"},
@@ -27,14 +42,23 @@ SOURCE_TYPES = [
     {"id": "reg",      "label": "Регулирование", "color": "#eda100"},
 ]
 
-# Ключевые слова поиска по регионам (агент ищет отдельно по каждому)
+# Ключевые слова поиска по регионам (агент ищет отдельно по каждому).
+# Каждый запрос содержит тематический «якорь», чтобы не ловить общий мусор.
 KEYWORDS = {
-    "g":  ["agentic commerce", "tokenization RWA", "know your agent KYA",
-           "agent payments protocol", "AI agent governance"],
-    "w":  ["tokenized loyalty MENA", "digital assets Asia regulation",
-           "agentic payments emerging markets"],
-    "ru": ["ЦФА платформа лояльность", "ИИ-агент финтех РФ",
-           "токенизация цифровые права"],
+    "g":  ["agentic commerce AI agents",
+           "tokenization real-world assets RWA",
+           "know your agent KYA verification",
+           "agent payments protocol AP2 x402",
+           "AI agent governance framework"],
+    "w":  ["tokenized loyalty program blockchain",
+           "real-world asset tokenization UAE Singapore",
+           "agentic payments regulation Asia Middle East",
+           "AI agents banking emerging markets"],
+    "ru": ["ЦФА цифровые финансовые активы платформа",
+           "токенизация лояльности блокчейн Россия",
+           "ИИ-агенты финтех банк Россия",
+           "утилитарные цифровые права УЦП",
+           "регулирование ЦФА цифровые права ЦБ"],
 }
 
 # Белые списки авторитетных источников (домены) по регионам
