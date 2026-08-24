@@ -1,12 +1,12 @@
 {
   "meta": {
-    "updated": "2026-08-23T06:38:50.645096Z",
+    "updated": "2026-08-24T06:55:29.475782Z",
     "range_label": "8 недель"
   },
   "kpi": {
-    "new_week": 170,
+    "new_week": 175,
     "new_week_delta_pct": 0,
-    "total": 326,
+    "total": 329,
     "academic": 2,
     "new_terms": 0
   },
@@ -97,18 +97,18 @@
         0,
         0,
         1,
-        5,
+        15,
+        14,
         22,
-        22,
-        47
+        46
       ],
       "kya": [
         0,
         0,
         0,
         0,
-        2,
-        2,
+        3,
+        1,
         4,
         9
       ],
@@ -117,30 +117,30 @@
         0,
         1,
         2,
-        6,
-        25,
-        37,
-        71
+        8,
+        30,
+        28,
+        75
       ],
       "agcom": [
         0,
         0,
         0,
         1,
-        5,
-        8,
+        7,
+        6,
         3,
-        25
+        26
       ],
       "reg": [
         0,
         0,
         1,
         0,
+        7,
         6,
-        6,
-        2,
-        13
+        1,
+        12
       ]
     }
   },
@@ -152,17 +152,17 @@
     },
     {
       "term": "agentic commerce",
-      "note": "18 упоминаний",
-      "status": "up"
-    },
-    {
-      "term": "цфа",
-      "note": "10 упоминаний",
+      "note": "19 упоминаний",
       "status": "up"
     },
     {
       "term": "rwa",
-      "note": "9 упоминаний",
+      "note": "12 упоминаний",
+      "status": "up"
+    },
+    {
+      "term": "цфа",
+      "note": "11 упоминаний",
       "status": "up"
     }
   ],
@@ -172,13 +172,13 @@
       "term": "Agent governance",
       "topic": "agmgmt",
       "def": "Правила, мандаты и контроль автономных агентов, подотчётность.",
-      "mentions": 368
+      "mentions": 376
     },
     {
       "term": "Agentic commerce (агентная коммерция)",
       "topic": "agcom",
       "def": "Модель, где ИИ-агенты сами ищут, сравнивают, торгуются и покупают за человека.",
-      "mentions": 161
+      "mentions": 163
     },
     {
       "term": "ЦФА (цифровые финансовые активы)",
@@ -190,7 +190,7 @@
       "term": "RWA (real-world assets)",
       "topic": "token",
       "def": "Токенизированные реальные активы — облигации, фонды, недвижимость, private credit.",
-      "mentions": 105
+      "mentions": 106
     },
     {
       "term": "AP2 (Agent Payments Protocol)",
@@ -208,7 +208,7 @@
       "term": "Токенизация",
       "topic": "token",
       "def": "Перенос права на актив в цифровую запись в реестре, которой можно управлять программно.",
-      "mentions": 55
+      "mentions": 56
     },
     {
       "term": "x402",
@@ -280,7 +280,7 @@
       "term": "ACP (Agentic Commerce Protocol)",
       "topic": "agcom",
       "def": "Формирующийся протокол агентной коммерции.",
-      "mentions": 8
+      "mentions": 9
     },
     {
       "term": "Breakage",
@@ -292,7 +292,7 @@
   "materials": [
     {
       "id": "m67ed9c23",
-      "date": "2026-08-23",
+      "date": "2026-08-24",
       "title": "What is agentic commerce? A shopper's guide to AI-powered shopping",
       "summary": "Agentic commerce is a form of e-commerce where shoppers use an AI digital assistant (AI Agents) to help them research options and even complete purchases.\n   These AI assistants are available through AI systems like ChatGPT or Perplexity, and are integrated on platforms like PayP",
       "url": "https://www.paypal.com/us/money-hub/article/agentic-commerce-explained",
@@ -304,8 +304,8 @@
     },
     {
       "id": "m294f3c3d",
-      "date": "2026-08-23",
-      "title": "How AI Agents Are Redefining Online Shopping | ACI Worldwide",
+      "date": "2026-08-24",
+      "title": "How AI Agents Are Redefining Online Shopping",
       "summary": "Agentic commerce is a shopping model where an AI agent acts on behalf of a shopper to research products, compare options, build carts, and sometimes complete purchases. The shopper stays in control by setting preferences, rules, and spending limits, while the AI handles the effor",
       "url": "https://www.aciworldwide.com/blog/agentic-commerce-explained-how-ai-agents-are-redefining-online-shopping",
       "topic": "agcom",
@@ -316,7 +316,7 @@
     },
     {
       "id": "m4924ca5a",
-      "date": "2026-08-23",
+      "date": "2026-08-24",
       "title": "Launch Agentic Commerce: AI-Powered Commerce for Enterprises",
       "summary": "Agentic commerce is an AI-driven approach to digital commerce where autonomous agents assist or complete shopping tasks. It combines structured product data, real-time integrations and governance controls to enable AI agents to support discovery, recommendations and transactions ",
       "url": "https://commercetools.com/products/agentic-commerce",
@@ -328,12 +328,972 @@
     },
     {
       "id": "mb7dc4dd1",
-      "date": "2026-08-23",
+      "date": "2026-08-24",
       "title": "What is agentic commerce? Your guide to AI-assisted retail",
       "summary": "Agentic AI is a type of AI that has a high degree of autonomy and agency. Unlike traditional AI systems, which simply respond to commands, agentic AI agents can plan, set goals, adapt to their environment and act autonomously with minimal human input. [...] Agentic commerce is a ",
       "url": "https://www.mastercard.com/us/en/news-and-trends/stories/2025/agentic-commerce-explainer.html",
       "topic": "agcom",
       "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m0e1749ec",
+      "date": "2026-08-24",
+      "title": "What Is Agentic Commerce? (2026)",
+      "summary": "Agentic commerce marks an inflection point where the market shifts from passive AI assistance to AI autonomy and action. Commerce agents can anticipate needs, make sense of large data sets, and act on insights. In the future of commerce, agents and humans will work side-by-side t",
+      "url": "https://www.salesforce.com/commerce/ai/agentic-commerce",
+      "topic": "agcom",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m0a113d56",
+      "date": "2026-08-24",
+      "title": "What Is Agentic Commerce? (AI Commerce)",
+      "summary": "items through Chad GPT uh that you can actually uh do it and the way actually it's possible and the way it works it works through the ACP which is agenting commerce protocol. So this is the new open standard for programmatic commerce flows between buyers, AI agents and businesses",
+      "url": "https://www.youtube.com/watch?v=ths73hH6yoc",
+      "topic": "agcom",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "mfd760074",
+      "date": "2026-08-24",
+      "title": "A Primer on Tokenization and Real-World Assets (RWA)",
+      "summary": "The tokenization of Real-World Assets (RWA) is not merely an incremental technological advancement; it represents a fundamental re-architecture of global finance. This process, which transforms rights to tangible and financial assets into programmable digital tokens on a blockcha",
+      "url": "https://blog.amplifyetfs.com/insights/a-primer-on-tokenization-and-real-world-assets-rwa",
+      "topic": "token",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m50da2284",
+      "date": "2026-08-24",
+      "title": "Real-World Assets (RWAs) Explained | Chainlink",
+      "summary": "Tokenized real-world assets (RWAs) are blockchain-based digital tokens that represent physical and traditional financial assets, such as cash, commodities, equities, bonds, credit, artwork, and intellectual property. The tokenization of RWAs marks a significant shift in how these",
+      "url": "https://chain.link/education-hub/real-world-assets-rwas-explained",
+      "topic": "token",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m2abb2eb4",
+      "date": "2026-08-24",
+      "title": "Real World Asset (RWA) Tokenization Ecosystem Map",
+      "summary": "Tokenization Ecosystem\n\nReal World Asset (RWA) Tokenization represents the confluence of traditional financial instruments and blockchain technology. This innovative approach enables the digital transformation of tangible assets such as real estate, securities, and commodities, p",
+      "url": "https://tokeny.com/real-world-asset-rwa-tokenization-ecosystem-map",
+      "topic": "token",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m1bf34889",
+      "date": "2026-08-24",
+      "title": "Legal Guide to Real-World Assets (RWA) Tokenization",
+      "summary": "What is “tokenization” of assets? In essence, tokenization means creating a unique digital token on a blockchain that represents ownership or rights in an asset. The token can be transferred or traded, enabling fractional investment and 24/7 markets for assets that traditionally ",
+      "url": "https://www.buzko.legal/content-eng/legal-guide-to-real-world-assets-rwa-tokenization",
+      "topic": "token",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "mb5f442f0",
+      "date": "2026-08-24",
+      "title": "RWA.xyz | Analytics on Tokenized Real-World Assets",
+      "summary": "GRO$89.8M+30.89%\n\nPAZ-1$22.4M\n\nPRPTY$20.0M\n\nPFII$16.3M\n\nPRO-100$5.2M\n\nCME-1$4.2M\n\nLVT-2$2.5M\n\nCDS-1$2.2M\n\nMAD-5$2.1M\n\nSAT-1$2.0M\n\n# Global Market Overview\n\nWelcome to RWA.xyz. Discover every tokenized real-world asset and the broader tokenization ecosystem, from asset managers to",
+      "url": "https://app.rwa.xyz",
+      "topic": "token",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m81c73305",
+      "date": "2026-08-24",
+      "title": "What are tokenized real-world assets?",
+      "summary": "are blockchain-based tokens that represent ownership stakes in physical or traditional financial assets—such as stocks, ETFs, Treasuries, or commodities—recorded and transferred on a blockchain. Unlike native crypto assets like ETH or BTC, RWA tokens derive their value from offch",
+      "url": "https://metamask.io/news/understanding-tokenized-real-world-assets-rwa",
+      "topic": "token",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m71d4781d",
+      "date": "2026-08-24",
+      "title": "How Know Your Agent (KYA) Verification Works",
+      "summary": "Know Your Agent is a verification framework that confirms an AI agent’s identity, authorization scope, and behavioral integrity before and during a transaction — extending the logic of KYC to non-human actors operating on a customer’s behalf.\n AI agents can be hijacked mid-sessio",
+      "url": "https://indatalabs.com/blog/know-your-agent-ai",
+      "topic": "kya",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m2d4719de",
+      "date": "2026-08-24",
+      "title": "What is Know Your Agent? A Marketplace Guide",
+      "summary": "Know Your Agent (KYA) is a verification framework that confirms the identity and integrity of AI agents operating in digital environments. Think of it as the equivalent of Know Your Customer (KYC), but built for software instead of people. Its primary purpose is to ensure that AI",
+      "url": "https://www.vouched.id/learn/blog/know-your-agent-marketplaces",
+      "topic": "kya",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "ma6ee108b",
+      "date": "2026-08-24",
+      "title": "Know Your Agent (KYA): AI Agent Verification Explained",
+      "summary": "Organizations familiar with electronic know your customer requirements understand the importance of identity assurance in digital systems.\n\nAs automation expands, organizations must also know their agents. Know Your Agent (KYA) refers to verifying and managing the identity of AI ",
+      "url": "https://www.entrust.com/resources/learn/know-your-agent",
+      "topic": "kya",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "md3caa80c",
+      "date": "2026-08-24",
+      "title": "Know Your Agent: How KYA Secures Autonomous AI | 1Kosmos",
+      "summary": "Unlike traditional identity verification that happens once at registration, Know Your Agent (KYA) validates an agent's identity and authenticates every consequential action at the moment of execution. This runtime authentication ties every action to a verified human identity and ",
+      "url": "https://www.1kosmos.com/resources/blog/know-your-agent-kya-securing-autonomous-ai",
+      "topic": "kya",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m4b05284a",
+      "date": "2026-08-24",
+      "title": "From AI Agents to Know Your Agent: Why KYA Is Critical for Secure Autonomous AI",
+      "summary": "This is where Know Your Agent (KYA) enters the game. Like Know Your Customer (KYC), Know Your Agent frameworks establish trust and accountability for autonomous systems.\n\nKYA is the process of verifying AI agents across identity, authentication, authorization, and policy enforcem",
+      "url": "https://sumsub.com/blog/know-your-agent",
+      "topic": "kya",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m80fcbf25",
+      "date": "2026-08-24",
+      "title": "What is Know Your Agent (KYA)? - Experian Insights",
+      "summary": "At its core, Know Your Agent is a framework for establishing trust in AI-driven interactions. It extends traditional identity verification into a world where software, not people, is acting.\n\nInstead of asking “Who is the customer?”, KYA asks a broader question: Who is this agent",
+      "url": "https://www.experian.com/blogs/insights/what-is-know-your-agent-kya",
+      "topic": "kya",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m65fa265e",
+      "date": "2026-08-24",
+      "title": "Which is best for your AI agents? (MPP, ACP, AP2, x402)",
+      "summary": "AP2 (Agent Payments Protocol), developed by Google with 60+ partners, defines the trust and authorization layer for agent-led payments using cryptographically signed mandates - supporting both traditional card payments and crypto via its x402 extension.\n x402, created by Coinbase",
+      "url": "https://www.crossmint.com/learn/agentic-payments-protocols-compared",
+      "topic": "agcom",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "mc765382b",
+      "date": "2026-08-24",
+      "title": "Announcing Agent Payments Protocol (AP2)",
+      "summary": "AP2 is designed as a universal protocol, providing security and trust for a variety of payments like stablecoins and cryptocurrencies. To accelerate support for the web3 ecosystem, in collaboration with Coinbase, Ethereum Foundation, MetaMask and other leading organizations, we h",
+      "url": "https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol",
+      "topic": "agcom",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "mc50bea46",
+      "date": "2026-08-24",
+      "title": "Agent Payments Protocol (AP2)",
+      "summary": "As an extension to the Agent2Agent (A2A) protocol, AP2 Protocol combines x402 stablecoin rail technology to provide complete payment infrastructure for the emerging agent economy and machine economy. Through smart payments capabilities, supporting full-scenario applications from ",
+      "url": "https://agentpaymentsprotocol.info",
+      "topic": "agcom",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "mccf1e5eb",
+      "date": "2026-08-24",
+      "title": "AI Agents and Autonomous Payments: A Comparative Study of ...",
+      "summary": "While x402 tackles agent payments via a blockchain microtransaction approach, Google’s Agent Payments Protocol (AP2) addresses the problem from a broader, multi-stakeholder perspective. Announced in late 2025 with the backing of over 60 organizations (including major payment netw",
+      "url": "https://medium.com/@gwrx2005/ai-agents-and-autonomous-payments-a-comparative-study-of-x402-and-ap2-protocols-e71b572d9838",
+      "topic": "agcom",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m9f05df58",
+      "date": "2026-08-24",
+      "title": "Agentic Payments Explained: ACP, AP2, and x402 | Orium",
+      "summary": "That gap is driving the emergence of a new generation of payment protocols designed specifically for machine-to-machine and agent-to-business commerce. These protocols define how an AI agent can securely authorize, execute, and record a payment on behalf of a user or an organizat",
+      "url": "https://orium.com/blog/agentic-payments-acp-ap2-x402",
+      "topic": "agcom",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "mc12e43e3",
+      "date": "2026-08-24",
+      "title": "AP2 - Agent Payments Protocol Documentation",
+      "summary": "## What is AP2?¶\n\nAgent Payments Protocol (AP2) is an open protocol for the emerging Agent Economy. It's designed to enable secure, reliable, and interoperable agent commerce for developers, merchants, and the payments industry. The protocol is available as an extension for the o",
+      "url": "https://ap2-protocol.org",
+      "topic": "agcom",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "md05db374",
+      "date": "2026-08-24",
+      "title": "Medium",
+      "summary": "What is agent governance and why is it important?  \nAgent governance is the framework of policies and technical controls that ensure AI agents operate safely, securely, and reliably. It’s crucial because without proper governance, AI agents can pose significant risks including da",
+      "url": "https://medium.com/@tahirbalarabe2/what-is-ai-agent-governance-the-four-pillars-of-ai-agent-governance-d9b045475b3e",
+      "topic": "agmgmt",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "ma6b1ec05",
+      "date": "2026-08-24",
+      "title": "What is AI Agent Governance? A Framework for Keeping Agents in Check | Airia",
+      "summary": "AI agent governance is the discipline of controlling what agents can do, how they can do it, and under what conditions — while maintaining the autonomy that makes them useful. Get it wrong, and you either have ungoverned agents creating risk or over-restricted agents delivering n",
+      "url": "https://airia.com/blog/what-is-ai-agent-governance-a-framework-for-keeping-agents-in-check",
+      "topic": "agmgmt",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "mae82c5a6",
+      "date": "2026-08-24",
+      "title": "AI Agent Governance Framework for Agentic Worfklows",
+      "summary": "Ensure the best governance for your organization with SS&C Blue Prism WorkHQ.\n\nLearn More\n\n## What is an AI agent governance framework?\n\nIt’s a structured approach to managing how an AI agent operates within an enterprise environment. It defines the rules and controls that ensure",
+      "url": "https://www.blueprism.com/resources/blog/ai-agent-agentic-governance-framework",
+      "topic": "agmgmt",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "mab1d9397",
+      "date": "2026-08-24",
+      "title": "How to build an agentic AI governance framework that scales",
+      "summary": "An agentic AI governance framework is a set of scalable principles, policies, and controls that define acceptable agent behavior, manage access to tools and data, and ensure accountability. Unlike traditional ML governance, it must govern not only model outputs but also agent act",
+      "url": "https://www.datarobot.com/blog/agentic-ai-governance-framework",
+      "topic": "agmgmt",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m50d35696",
+      "date": "2026-08-24",
+      "title": "Agentic AI Governance Framework: Policy, Operations & Runtime Controls — Blog | Attentive",
+      "summary": "Thank you! Your submission has been received!\n\nOops! Something went wrong while submitting the form.\n\n# This three-layer governance framework enables autonomous AI agents to optimize continuously while operating within your brand, compliance, and business boundaries. [...] This t",
+      "url": "https://www.attentive.com/blog/agentic-ai-governance-framework",
+      "topic": "agmgmt",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m26c0c603",
+      "date": "2026-08-24",
+      "title": "Govern and secure AI agents AI agents across the organization - Cloud Adoption Framework | Microsoft Learn",
+      "summary": "The diagram illustrates a comprehensive governance and security framework organized into four layers. The top layer, \"Data governance and compliance,\" includes Microsoft Purview Compliance Manager, Microsoft Purview APIs, Copilot Studio governance features, and data location cont",
+      "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai-agents/governance-security-across-organization",
+      "topic": "agmgmt",
+      "region": "g",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m6efa4722",
+      "date": "2026-08-24",
+      "title": "[PDF] A Systematic Review of Blockchain-based Loyalty Programs",
+      "summary": "Despite this hype, we have yet to see an examination of existing blockchain-based loyalty solutions. This paper identifies, reviews, and classifies tokenized loyalty solutions. Using a web-scraping method, we systematically retrieved 9,642 tokens listed on the coinmarketcap.com w",
+      "url": "https://scholarspace.manoa.hawaii.edu/bitstreams/0cb3be05-3ead-4a5e-ad28-1087cf98ea97/download",
+      "topic": "token",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m81325a96",
+      "date": "2026-08-24",
+      "title": "Blockchain Loyalty Programs | Chainlink",
+      "summary": "Blockchain loyalty programs represent a fundamental shift in how enterprises approach customer retention and engagement. By replacing isolated databases with tokenized digital assets, brands can offer consumers verifiable ownership, increased transparency, and expansive interoper",
+      "url": "https://chain.link/article/blockchain-loyalty-programs",
+      "topic": "token",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m422cc5dc",
+      "date": "2026-08-24",
+      "title": "The Evolution of Loyalty With Tokenization | Ripple | Ripple",
+      "summary": "The tokenization of loyalty programs represents a transformative leap forward, harnessing the power of blockchain to create more engaging, valuable, and user-friendly experiences. As companies navigate this evolution, the potential for innovation is vast, promising a future where",
+      "url": "https://ripple.com/insights/the-evolution-of-customer-loyalty-with-tokenizaiton",
+      "topic": "token",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "mcd6044c3",
+      "date": "2026-08-24",
+      "title": "Tokenization: Supercharging the Traditional Loyalty System | Photon",
+      "summary": "Asset digitization is the goal of a tokenized loyalty program, creating a blockchain-based digital certificate that represents something of value. This digital certificate works very similar to how shares of stock are issued to represent the fractional value of a company: one out",
+      "url": "https://www.photon.com/tokenization-supercharging-the-traditional-loyalty-system",
+      "topic": "token",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "ma2726a3e",
+      "date": "2026-08-24",
+      "title": "Medium",
+      "summary": "As blockchain tooling becomes easier to use behind the scenes, tokenised loyalty will likely look less like crypto and more like a modern reward layer that happens to use blockchain rails.\n\n## Conclusion\n\nTokenised loyalty can work extremely well, but only when the token supports",
+      "url": "https://medium.com/@ancilartech/tokenised-loyalty-in-2026-what-works-what-fails-and-how-to-stay-out-of-regulatory-trouble-47e04b8f3ff8",
+      "topic": "token",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m3bdae464",
+      "date": "2026-08-24",
+      "title": "Making blockchain real for customer loyalty programs | Deloitte US",
+      "summary": "Customer loyalty programs are not realizing their full potential due to low client retention and redemption rates, time delays, and high costs. That’s where blockchain comes in.\n\n### Introducing blockchain as a customer loyalty solution [...] In this installment of the Deloitte C",
+      "url": "https://www.deloitte.com/us/en/industries/financial-services/articles/making-blockchain-real-customer-loyalty-rewards-programs.html",
+      "topic": "agmgmt",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m275ed041",
+      "date": "2026-08-24",
+      "title": "Real-World Asset Tokenization Platform Development in UAE",
+      "summary": "Jul 14, 2026 · The UAE is rapidly emerging as a global hub for real-world asset tokenization , driven by its progressive regulatory framework, digital economy initiatives, and increasing... THE TOKENIZATION OF REAL-WORLD ASSETS (RWA) IS ACCELERATING, WITH OVER $24.30 BILLION IN V",
+      "url": "https://www.suffescom.ae/blog/real-world-asset-tokenization-development-uae",
+      "topic": "token",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "ma0483b77",
+      "date": "2026-08-24",
+      "title": "How to Tokenize Real-World Assets in the UAE (2026)",
+      "summary": "About RWA Labs\n\nRWA Labs is the UAE's full-stack real-world asset tokenization platform. From company formation and legal structuring to token design, technology deployment, marketing, and ecosystem access, we provide everything founders and institutions need to bring real-world ",
+      "url": "https://rwalabs.ae/how-to-tokenize-real-world-asset-uae",
+      "topic": "token",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m3f65a8c6",
+      "date": "2026-08-24",
+      "title": "RWA Labs | UAE Real-World Asset Tokenization Ecosystem",
+      "summary": "THE TOKENIZATION OF REAL-WORLD ASSETS (RWA) IS ACCELERATING, WITH OVER $24.30 BILLION IN VALUE LOCKED ON PUBLIC BLOCKCHAINS AS OF JUNE 2025 (SOURCE: RWA.XYZ).\n\nTo meet this rising demand, RWA Labs launches as a full-scope platform and infrastructure provider based in the UAE — he",
+      "url": "https://rwalabs.ae",
+      "topic": "token",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m06397a53",
+      "date": "2026-08-24",
+      "title": "RWA Tokenization Explained: Benefits & RWA Strategies",
+      "summary": "Through clear rules and robust infrastructure, the UAE has established itself as a trailblazer, blending traditional finance strengths with blockchain innovation. The tokenization of real-world assets in the UAE is now a rapidly growing reality.\n\nBusinesses, investors, and govern",
+      "url": "https://www.cobo.com/post/real-world-asset-rwa-tokenization-in-the-uae-the-future-of-finance",
+      "topic": "token",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "mcb799d7c",
+      "date": "2026-08-24",
+      "title": "RWA Tokenization Platform Guide for Institutions",
+      "summary": "$867 trillion in total addressable real-world assets globally\n $10 trillion projected tokenized asset market by 2030 (BCG)\n BlackRock BUIDL fund surpassed $500M in tokenized Treasuries within months\n JPMorgan Onyx has processed $900B+ in tokenized repo transactions\n Traditional s",
+      "url": "https://www.liquidmercury.com/resources/rwa-tokenization",
+      "topic": "token",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m120e1bd7",
+      "date": "2026-08-24",
+      "title": "Dubai Land Department - Real Estate Tokenization",
+      "summary": "Powered by Dubai Land Department in collaboration with the Virtual Assets Regulatory Authority (VARA), Dubai Future Foundation and the Central Bank of the UAE, the Pilot Phase of Real Estate Tokenization Project marks a bold step toward the future of property investment in the em",
+      "url": "https://dubailand.gov.ae/en/eservices/real-estate-tokenization",
+      "topic": "token",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m5647bceb",
+      "date": "2026-08-24",
+      "title": "What new rules for agentic AI in payments might look like",
+      "summary": "#### Explore all Locations United Kingdom\n\n#### Explore all Africa\n\nSouth Africa\n\n#### Explore all Americas\n\n#### Explore all Asia Pacific\n\nAustralia China Japan Philippines Singapore South Korea\n\n#### Explore all Europe\n\nFrance Germany Ireland Luxembourg Poland Netherlands Spain",
+      "url": "https://www.pinsentmasons.com/out-law/analysis/what-new-rules-agentic-ai-payments-look-like",
+      "topic": "agmgmt",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m6f99ff04",
+      "date": "2026-08-24",
+      "title": "Navigating agentic AI regulation in APAC - SymphonyAI",
+      "summary": "1. No specific agentic AI laws in APAC financial services: There’s currently no explicit regulatory guidance on agentic AI across major APAC countries. Firms are expected to use existing risk and accountability frameworks.\n2. Principles-based regulation dominates: Human oversight",
+      "url": "https://www.symphonyai.com/resources/agentic-ai-regulation-apac",
+      "topic": "reg",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "mbc887766",
+      "date": "2026-08-24",
+      "title": "Agentic AI Payments: Navigating Consumer Protection, Innovation, and Regulatory Frameworks - consumerbankers.com",
+      "summary": "This regulatory framework provided consumers with the confidence necessary to transition large swaths of their payments from cash and checks to debit cards and ACH over the subsequent decades. More recently, however, new types of fraud emerging from P2P payments and other sources",
+      "url": "https://consumerbankers.com/research/agentic-ai-payments-navigating-consumer-protection-innovation-and-regulatory-frameworks",
+      "topic": "agmgmt",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m8c59dd23",
+      "date": "2026-08-24",
+      "title": "Agentic AI considerations for payment service providers | Addleshaw Goddard LLP",
+      "summary": "+ How we deliver for clients, globally\n  + Asia offices:\n  + Japan\n  + Singapore\n  + Europe offices:\n  + England & Wales\n  + France\n  + Germany\n  + Ireland\n  + Luxembourg\n  + Netherlands\n  + Poland\n  + Scotland\n  + Spain\n  + Middle East offices:\n  + Kingdom of Saudi Arabia\n  + Om",
+      "url": "https://www.addleshawgoddard.com/en/insights/insights-briefings/2026/financial-regulation/financial-regulation-in-the-know-payments-february-2026/agentic-ai-considerations-payment-service-providers",
+      "topic": "agmgmt",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "md04d1e13",
+      "date": "2026-08-24",
+      "title": "Agentic AI in payments",
+      "summary": "The EU AI Act has introduced a horizontal regulatory framework applicable to the use of AI (across different sectors) which builds on top of the financial services regulation that applies to the use of AI payment agents. This directly applicable Regulation, set to start applying ",
+      "url": "https://www.taylorwessing.com/en/insights-and-events/insights/2026/02/agentic-ai-in-payments",
+      "topic": "reg",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "md828e605",
+      "date": "2026-08-24",
+      "title": "How Agentic AI Will Reshape Payments in - IMF eLibrary",
+      "summary": "regulation affecting agentic AI applications, such as EU’s AI Act, is a key risk mitigation strategy that the public sector should consider (European Union Artificial Intelligence Act 2024). [...] agents responsibly including a thorough ex-ante risk assessment by selecting approp",
+      "url": "https://www.elibrary.imf.org/view/journals/068/2026/004/article-A001-en.xml",
+      "topic": "reg",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "me9ed2642",
+      "date": "2026-08-24",
+      "title": "AI Agents in Financial Services Market",
+      "summary": "A fifth trend is Salesforce Agentforce, Kore.ai, and Kasisto KAIgentic emerging as platform standards. Salesforce Agentforce provides agent deployment within the Financial Services Cloud, with pre-built agents for customer service, onboarding, and compliance. Kore.ai provides Ban",
+      "url": "https://www.marketsandmarkets.com/Market-Reports/ai-agents-in-financial-services-market-19058072.html",
+      "topic": "reg",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m8d92b82d",
+      "date": "2026-08-24",
+      "title": "Agentic AI in banking | Deloitte Insights",
+      "summary": "# How banks can supercharge intelligent automation with agentic AI\n\n## AI agents are an emerging frontier in banks’ AI journey, but deploying agentic AI in banking may need fresh thinking and a fundamental redesign of existing processes and workflows\n\n### Prakul Sharma\n\nAI & Insi",
+      "url": "https://www.deloitte.com/us/en/insights/industry/financial-services/agentic-ai-banking.html",
+      "topic": "agmgmt",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m6edc4060",
+      "date": "2026-08-24",
+      "title": "AI Agents in Finance",
+      "summary": "Greater inclusion of smaller markets: AI agents also make finance more inclusive by reaching customers and markets that were once too costly or complex to serve. They help enable microfinance in underserved communities and provide personalized digital banking at scale. These capa",
+      "url": "https://www.ibm.com/think/topics/ai-agents-in-finance",
+      "topic": "agmgmt",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "mecd3298c",
+      "date": "2026-08-24",
+      "title": "Agentic AI and the future of work in financial services",
+      "summary": "While the hype around AI persists, 2026 is shaping up as the year agentic AI will create scaled transformation in financial services. A clear gap is emerging between the market leaders, the chasing pack and the laggards. Visionaries now anticipate the rise of the “10× bank”, wher",
+      "url": "https://bankingblog.accenture.com/agentic-ai-future-of-work",
+      "topic": "agmgmt",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m3f9514ab",
+      "date": "2026-08-24",
+      "title": "Agentic AI in Banking: Meaning, Benefits, and Applications | Salesforce",
+      "summary": "From IT infrastructure to staffing schedules, agentic AI helps banks adjust based on usage patterns, forecasted demand, or emerging bottlenecks. This means smarter allocation of resources without waste or downtime.\n\n#### Data Processing and Analysis at Scale\n\nWith access to large",
+      "url": "https://www.salesforce.com/financial-services/artificial-intelligence/agentic-ai-in-banking",
+      "topic": "agmgmt",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m72c2fe76",
+      "date": "2026-08-24",
+      "title": "AI Agents for Financial Services: Top Use Cases and Examples | Workday US",
+      "summary": "AI agents for financial services are emerging as one of the key tools for achieving this without compromising precision, accuracy, or personalization. Agents are capable of making context-driven decisions and acting autonomously within the parameters and guardrails set for them b",
+      "url": "https://www.workday.com/en-us/perspectives/ai/what-are-ai-agents-in-financial-services.html",
+      "topic": "agmgmt",
+      "region": "w",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m67d668e3",
+      "date": "2026-08-24",
+      "title": "Цифровые финансовые активы — Википедия",
+      "summary": "Цифровые финансовые активы (ЦФА) в России — финансовый инструмент, который удостоверяет цифровые права. К таким правам могут относиться, например, денежные требования, владение эмиссионными ценными бумагами, участие в капитале непубличного акционерного общества, требования переда",
+      "url": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D1%8B%D0%B5_%D1%84%D0%B8%D0%BD%D0%B0%D0%BD%D1%81%D0%BE%D0%B2%D1%8B%D0%B5_%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D1%8B",
+      "topic": "token",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m8c7bab83",
+      "date": "2026-08-24",
+      "title": "ЦФА в 2026: что это, виды, примеры, закон, как инвестировать и выпускать цифровые активы",
+      "summary": "Цифровые финансовые активы (ЦФА) — это новый инструмент для инвестиций на базе современных технологий: блокчейна и смарт-контрактов. Если говорить упрощенно, это цифровая оболочка, в которую можно «обернуть» самые разные активы — от долгов до драгметаллов.\n\nПо закону к ЦФА относя",
+      "url": "https://t-j.ru/guide/digital-financial-assets",
+      "topic": "token",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m869bc70e",
+      "date": "2026-08-24",
+      "title": "Цифровые финансовые активы в России",
+      "summary": "ЦФА. Цифровые финансовые активы представляют собой цифровые права, включающие денежные требования, возможность осуществления прав по эмиссионным ценным бумагам, права участия в капитале непубличного акционерного общества, право требовать передачи эмиссионных ценных бумаг. Эмитент",
+      "url": "https://cbonds.ru/dfa",
+      "topic": "token",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m1183ac4e",
+      "date": "2026-08-24",
+      "title": "Цифровые Финансовые Активы",
+      "summary": "Московская биржа\n\nВойти\n\n# Московская биржа — центр запуска ваших цифровых активов\n\n### Ускоряем привлечение инвестиций для бизнеса\n\n## \n\nЦифровые финансовые активы (ЦФА) — цифровые права, выпуск, учет и обращение которых осуществляется путем внесения записей в информационную сис",
+      "url": "https://www.moex.com/ru/digital-assets",
+      "topic": "token",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m499d6560",
+      "date": "2026-08-24",
+      "title": "ЦФА.РФ — Цифровые Финансовые Активы",
+      "summary": "#### Все решения по выпуску ЦФА в одном месте\n\nВыпуски ЦФА проходят на большом количестве платформ. Мы собрали в одном месте все решения, так чтобы вам было удобно следить за активностью эмитентов без серфинга по сайтам операторов.\n\nУслуга\n\n## Выпуск ЦФА под ключ\n\nПолный цикл под",
+      "url": "https://xn--80a3bf.xn--p1ai",
+      "topic": "token",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m18e5fde3",
+      "date": "2026-08-24",
+      "title": "Платформа «Цифровые активы»",
+      "summary": "Цифровые продукты на основе распределенного реестра. Доступ к цифровому финансированию, отсутствие посредников, прозрачность транзакций.",
+      "url": "https://dfa.sber.ru",
+      "topic": "token",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m505b4420",
+      "date": "2026-08-24",
+      "title": "ФИНАНСОВО-ПРАВОВОЕ РЕГУЛИРОВАНИЕ ТОКЕНИЗАЦИИ ПРОГРАММ ЛОЯЛЬНОСТИ ГОСУДАРСТВЕННЫХ, КОММЕРЧЕСКИХ И НЕКОММЕРЧЕСКИХ ОРГАНИЗАЦИЙ В РОССИЙСКОЙ ФЕДЕРАЦИИ – тема научной статьи по экономике и бизнесу читайте бесплатно текст научно-исследовательской работы в электронной библиотеке КиберЛенинка",
+      "summary": "Аннотация: активное развитие цифровой экономики в Российской Федерации обуславливает трансформацию традиционных финансово-правовых институтов и одним из таких инновационных явлений выступает токенизация - процесс преобразования прав на различные активы в цифровые токены, учитывае",
+      "url": "https://cyberleninka.ru/article/n/finansovo-pravovoe-regulirovanie-tokenizatsii-programm-loyalnosti-gosudarstvennyh-kommercheskih-i-nekommercheskih-organizatsiy-v",
+      "topic": "token",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "mccddc263",
+      "date": "2026-08-24",
+      "title": "Блокчейн в России",
+      "summary": "Основная статья: Блокчейн в Москве\n\n## Обзор проектов и инициатив по использованию блокчейн-технологий\n\n### 2026: Правительство РФ утвердило концепцию токенизации активов реального сектора экономики для развития блокчейна\n\nПравительство РФ утвердило Концепцию токенизации активов ",
+      "url": "https://www.tadviser.ru/index.php/%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D1%8F:%D0%91%D0%BB%D0%BE%D0%BA%D1%87%D0%B5%D0%B9%D0%BD_%D0%B2_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8",
+      "topic": "token",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m0404e209",
+      "date": "2026-08-24",
+      "title": "Разбор полетов: как взаимодействуют blockchain и системы лояльности клиентов? - Startup.Network",
+      "summary": "Так, например, бизнес-гигант “Бургер Кинг Россия” запустил программу лояльности базе платформы Waves, в рамках которой компания выпустила 1 млрд Whoppercoin. Это даст возможность клиентам сети получать “вопперкоины” основываясь на сумме чека: 1 рубль = 1 Whoppercoin.   \n   \n По ф",
+      "url": "https://startup.network/ru/news/kak-vzaimodeystvuyut-blockchain-i-sistemy-loyalnosti-klientov.html",
+      "topic": "agmgmt",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m062da7ef",
+      "date": "2026-08-24",
+      "title": "Manzana Group | Программы лояльности и технологии блокчейн",
+      "summary": "автоматическое обновление токенов по всей сети обеспечивает удобство пользования ПЛ для всех участников. Обновленный токен лояльности становится условием для начисления поощрительных бонусов, которые можно будет использовать уже через несколько минут в любом магазине-участнике ПЛ",
+      "url": "https://manzanagroup.ru/information/programmy-loyalnosti-i-tekhnologii-blokcheyn",
+      "topic": "token",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "mfc0efa01",
+      "date": "2026-08-24",
+      "title": "Российский рынок токенов может достигнуть 13 трлн ...",
+      "summary": "Dec 11, 2025 — В России рынок токенизации развивается по пути создания изолированных экосистем, когда обращение активов ограничено рамками отдельных платформ.Read more",
+      "url": "https://www.sberbank.ru/ru/sberpress/all/article?newsID=e7a67d35-f81e-4d94-8dee-c26e0e038b6a&blockID=1303&regionID=16&lang=ru&type=NEWS",
+      "topic": "token",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m915adb39",
+      "date": "2026-08-24",
+      "title": "Платформы токенизации активов: обзор и сравнение — WCR Consulting",
+      "summary": "Таким образом, в РФ происходит токенизация металлов, ценных бумаг, недвижимости и иных активов. Правовое регулирование требует усовершенствования и доработок, поскольку сфера криптовалюты крайне слабо развита в РФ. [...] ## 1. Платформы для токенизации активов в РФ. [...] 1. Возм",
+      "url": "https://wcr-consulting.com/blog/2024/07/28/platforms-for-tokenization",
+      "topic": "token",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m537ea9c8",
+      "date": "2026-08-24",
+      "title": "ИИ-агенты и RPA (Robotic Process Automation) - автоматизация для банков",
+      "summary": "Внедрение ИИ в банковской сфере окупается многократно. Исследование Ассоциации ФинТех показало, что топ-5 российских банков инвестируют около $1 млрд в год в ИИ и получают до $3 млрд прибыли ежегодно — то есть 300% возврат на вложения (ТАСС). По данным McKinsey, потенциальная еже",
+      "url": "https://banki.skydigital.pro",
+      "topic": "agmgmt",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m6c5c4a49",
+      "date": "2026-08-24",
+      "title": "ИИ-агенты в банках и кредитных организациях - Блог - Wikibot",
+      "summary": "# ИИ-агенты в банках и кредитных организациях\n\nСергей ХристолюбовСергей Христолюбов\n\nФинтех\n\nИИ-агенты в банках и кредитных организациях  \n\nИскусственный интеллект (ИИ) стремительно меняет банковскую индустрию, трансформируя процессы, улучшая клиентский опыт и повышая эффективнос",
+      "url": "https://wikibot.pro/blog/ai-agent-for-bank",
+      "topic": "agmgmt",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m687bca1d",
+      "date": "2026-08-24",
+      "title": "ИИ‑агенты в финансах: гид по технологии и сценариям",
+      "summary": "В России похожую логику реализует Сбер: банк запустил линейку из 17 сервисных AI-агентов на базе GigaChat для бизнеса, которые обслуживают корпоративных клиентов по платежам, эквайрингу, зарплатным проектам.\n\nАналитика и исследования для инвестбанкинга [...] Под агентами стоит пл",
+      "url": "https://generation-ai.ru/media/ai-agenty-v-finansah",
+      "topic": "agmgmt",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m3b0e8f6b",
+      "date": "2026-08-24",
+      "title": "ИИ-БАНКИНГ_26",
+      "summary": "Спикеры:\n\n● Руслан Булатов, директор департамента финансовых технологий Банка России   \n● Максим Григорьев, генеральный директор Ассоциации ФинТех\n\n● Семен Будённый, управляющий директор AI Сбер, научный консультант AIRI\n\n● Валерия Воробьева, генеральный директор, Альянс в сфере ",
+      "url": "https://event-iibanking.bosfera.ru/ii4",
+      "topic": "agmgmt",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m178d68ca",
+      "date": "2026-08-24",
+      "title": "ИИ-агенты и эффект в цифрах: главные тренды финтеха в 2025 году | РБК Тренды",
+      "summary": "RAG стал тем элементом, который превратил ИИ-агента в «цифрового эксперта», способного давать точные и обоснованные ответы в реальном времени. Он устраняет главный недостаток больших языковых моделей — склонность к галлюцинациям. Неудивительно, что каждая пятая компания на россий",
+      "url": "https://trends.rbc.ru/trends/industry/cmrm/695242449a7947e94ca3bd48",
+      "topic": "agmgmt",
+      "region": "ru",
+      "source_type": "news",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m5b525fc7",
+      "date": "2026-08-24",
+      "title": "Десятка прототипов ИИ-агентов - Connect-WIT",
+      "summary": "В пилоте приняли участие эксперты АФТ из АльфаСтрахования, Банка ВБРР, ДОМ.РФ, Кредит Европа Банка (Россия), финансового маркетплейса Сравни, Капитал Лайф Страхование Жизни, Банка Синара, MWS AI, Ростелекома, Сбера, Yandex B2B Tech, Газпромбанка и ФлексСофта. В роли наблюдателей ",
+      "url": "https://www.connect-wit.ru/desyatka-prototipov-ii-agentov.html",
+      "topic": "agmgmt",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m48de7c8e",
+      "date": "2026-08-24",
+      "title": "Выпуск утилитарных цифровых прав в | Институт Корпоративных Технологий",
+      "summary": "## Что такое УЦП\n\nУтилитарные цифровые права (УЦП) – это новый вид цифровых активов, закрепленный в российском законодательстве (ФЗ №259-ФЗ “О цифровых финансовых активах”). Они предоставляют их держателю право на получение определённого товара, услуги или иного имущественного эк",
+      "url": "https://ikt-gik.ru/services/vypusk-utilitarnykh-tsifrovykh-prav",
+      "topic": "token",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m3dd44631",
+      "date": "2026-08-24",
+      "title": "Утилитарные цифровые права",
+      "summary": "## Понятие\n\nУтилитарные цифровые права (УЦП) – это вид цифровых прав. Цифровые права являются, в свою очередь, видом имущественных прав. В одном ряду с ними стоят безналичные денежные средства и бездокументарные ценные бумаги.\n\nНа данный момент законодательство выделяет три вида ",
+      "url": "https://dgtlaw.ru/analytic/utilitarnye-cifrovye-prava",
+      "topic": "reg",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m5930fafc",
+      "date": "2026-08-24",
+      "title": "Что такое утилитарные цифровые права?",
+      "summary": "ЭмитентуВыпуски активовНовости\n\n# Что такое утилитарные цифровые права?\n\nУтилитарными цифровыми правами (УЦП) являются права, которые включают требования на:\n\n передачу вещи;\n\n передачу исключительных прав на результаты интеллектуальной деятельности и (или) прав использовать резу",
+      "url": "https://tokeon.ru/voprosy-otvety/chto-takoe-utilitarnye-cifrovye-prava",
+      "topic": "token",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m54294965",
+      "date": "2026-08-24",
+      "title": "Утилитарные цифровые права: что это такое и для чего нужны?",
+      "summary": "Также в энергетическом секторе встречаются проекты, где УЦП дают право на определенный объем поставки электроэнергии в будущем.  \n  \nУтилитарные цифровые права — это инструмент, который открывает бизнесу и инвесторам новые возможности для привлечения капитала, организации расчето",
+      "url": "https://corpteh.moscow/utilitarnyye_tsifrovyye_prava_chto_eto_takoye_i_dlya_chego_nuzhny",
+      "topic": "agmgmt",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m6e01be1c",
+      "date": "2026-08-24",
+      "title": "Цифровые свидетельства на Утилитарные цифровые права",
+      "summary": "Правовая основа. Что такое УЦП и ЦС на УЦП\n\nФедеральный закон от 02.08.2019 N 259-ФЗ «О привлечении инвестиций с использованием инвестиционных платформ и о внесении изменений в отдельные законодательные акты Российской Федерации» (Статьи 8, 9).   \n  \n Утилитарное цифровое право п",
+      "url": "https://spvb.ru/rynki/fondovyy-rynok/cifrovye_svidetelstva",
+      "topic": "reg",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m234edeaa",
+      "date": "2026-08-24",
+      "title": "ЦФА и УЦП: виды цифровых прав, выпуск и обращение",
+      "summary": "Утилитарные цифровые права по своей экономической сути близки к предварительно оплаченному праву на получение конкретного исполнения в будущем. Инвестор приобретает в информационной системе цифровое право, которое дает ему возможность требовать от лица, разместившего УЦП, передач",
+      "url": "https://pravovest-audit.ru/nashi-statii-nalogi-i-buhuchet/tsifrovye-finansovye-aktivy-i-utilitarnye-tsifrovye-prava-pravovaya-i-ekonomicheskaya-sushchnost-i-p",
+      "topic": "token",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "mc84bccbb",
+      "date": "2026-08-24",
+      "title": "ЦФА по закону: что нужно знать о регулировании",
+      "summary": "Детали регулирования (лимиты, конкретные требования к отчетности, перечни документов) могут меняться, но фундаментальная логика остается стабильной: ЦФА — это цифровая форма традиционных прав, выпускаемая под надзором Банка России через аккредитованных операторов с обязательной ф",
+      "url": "https://gidmark.ru/stati/yuridicheskaya-baza-czfa-v-rossii,-klyuchevyie-trebovaniya-fz-259-i-svyazannyie-normativyi",
+      "topic": "reg",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m56b108c4",
+      "date": "2026-08-24",
+      "title": "Цифровые финансовые активы (ЦФА): правовой режим, виды и государственное регулирование",
+      "summary": "В соответствии со статьей 1 Федерального закона от 31.07.2020 № 259-ФЗ «О цифровых финансовых активах, цифровой валюте и о внесении изменений в отдельные законодательные акты Российской Федерации» (далее – «Закон № 259-ФЗ», «Закон о ЦФА», «Закон о цифровых финансовых активах») ЦФ",
+      "url": "https://brace-lf.com/informaciya/finansovoe-pravo/tsfa-ponyatie-vidy-i-regulirovanie-tsifrovykh-finansovykh-aktivov",
+      "topic": "reg",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m8b0f6ef6",
+      "date": "2026-08-24",
+      "title": "Регуляторный мониторинг ЦФА - Цифровые Финансовые Активы",
+      "summary": "В России регулятором цифровых финансовых активов является Центральный банк. Он отвечает за выработку правил и нормативных требований к деятельности компаний, работающих с цифровыми активами. ЦБ также осуществляет контроль и надзор за их деятельностью. Минфин принимает решения о н",
+      "url": "https://xn--80a3bf.xn--p1ai/cfa-centrobank.html",
+      "topic": "token",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m89267b65",
+      "date": "2026-08-24",
+      "title": "Статья 1. Предмет регулирования и сфера действия настоящего Федерального закона \\ КонсультантПлюс",
+      "summary": "2. Цифровыми финансовыми активами признаются цифровые права, включающие денежные требования, возможность осуществления прав по эмиссионным ценным бумагам, права участия в капитале непубличного акционерного общества, право требовать передачи эмиссионных ценных бумаг, которые преду",
+      "url": "https://www.consultant.ru/document/cons_doc_LAW_358753/e21bf6629de12458b6382a7c2310cc359186da60",
+      "topic": "reg",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m51682395",
+      "date": "2026-08-24",
+      "title": "Цифровые финансовые активы и их операторы",
+      "summary": "ЦФА— это цифровые права, включающие денежные требования, возможность осуществления прав по эмиссионным ценным бумагам, права участия в капитале непубличного акционерного общества, право требовать передачи эмиссионных ценных бумаг, которые предусмотрены решением о выпуске ЦФА.\n\n В",
+      "url": "https://www.cbr.ru/finm_infrastructure/digital_oper",
+      "topic": "token",
+      "region": "ru",
+      "source_type": "industry",
+      "entity_type": "материал",
+      "saved": false
+    },
+    {
+      "id": "m2c598c59",
+      "date": "2026-08-24",
+      "title": "Цифровые финансовые активы | Банк России",
+      "summary": "5 Могут ли физические лица, не являющиеся квалифицированными инвесторами, приобретать ЦФА? Если да, то есть ли какие-нибудь ограничения на инвестирование в ЦФА такими физическими лицами?\n\n Обновлено: 25.01.2023 \n\nФизические лица, не являющиеся квалифицированными инвесторами, могу",
+      "url": "https://www.cbr.ru/faq/tsfa",
+      "topic": "token",
+      "region": "ru",
       "source_type": "industry",
       "entity_type": "материал",
       "saved": false
@@ -345,54 +1305,6 @@
       "summary": "Agentic commerce—shopping powered by AI agents acting on our behalf—represents a seismic shift in the marketplace. It moves us toward a world in which AI anticipates consumer needs, navigates shopping options, negotiates deals, and executes transactions, all in alignment with hum",
       "url": "https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-agentic-commerce-opportunity-how-ai-agents-are-ushering-in-a-new-era-for-consumers-and-merchants",
       "topic": "agcom",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m0e1749ec",
-      "date": "2026-08-23",
-      "title": "What Is Agentic Commerce? (2026) | Salesforce",
-      "summary": "Agentic commerce marks an inflection point where the market shifts from passive AI assistance to AI autonomy and action. Commerce agents can anticipate needs, make sense of large data sets, and act on insights. In the future of commerce, agents and humans will work side-by-side t",
-      "url": "https://www.salesforce.com/commerce/ai/agentic-commerce",
-      "topic": "agcom",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m50da2284",
-      "date": "2026-08-23",
-      "title": "Real-World Assets (RWAs) Explained",
-      "summary": "Tokenized real-world assets (RWAs) are blockchain-based digital tokens that represent physical and traditional financial assets, such as cash, commodities, equities, bonds, credit, artwork, and intellectual property. The tokenization of RWAs marks a significant shift in how these",
-      "url": "https://chain.link/education-hub/real-world-assets-rwas-explained",
-      "topic": "token",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "mfd760074",
-      "date": "2026-08-23",
-      "title": "A Primer on Tokenization and Real-World Assets (RWA)",
-      "summary": "The tokenization of Real-World Assets (RWA) is not merely an incremental technological advancement; it represents a fundamental re-architecture of global finance. This process, which transforms rights to tangible and financial assets into programmable digital tokens on a blockcha",
-      "url": "https://blog.amplifyetfs.com/insights/a-primer-on-tokenization-and-real-world-assets-rwa",
-      "topic": "token",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m2abb2eb4",
-      "date": "2026-08-23",
-      "title": "Real World Asset (RWA) Tokenization Ecosystem Map",
-      "summary": "Tokenization Ecosystem\n\nReal World Asset (RWA) Tokenization represents the confluence of traditional financial instruments and blockchain technology. This innovative approach enables the digital transformation of tangible assets such as real estate, securities, and commodities, p",
-      "url": "https://tokeny.com/real-world-asset-rwa-tokenization-ecosystem-map",
-      "topic": "token",
       "region": "g",
       "source_type": "industry",
       "entity_type": "материал",
@@ -411,90 +1323,6 @@
       "saved": false
     },
     {
-      "id": "m1bf34889",
-      "date": "2026-08-23",
-      "title": "Legal Guide to Real-World Assets (RWA) Tokenization",
-      "summary": "What is “tokenization” of assets? In essence, tokenization means creating a unique digital token on a blockchain that represents ownership or rights in an asset. The token can be transferred or traded, enabling fractional investment and 24/7 markets for assets that traditionally ",
-      "url": "https://www.buzko.legal/content-eng/legal-guide-to-real-world-assets-rwa-tokenization",
-      "topic": "token",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m81c73305",
-      "date": "2026-08-23",
-      "title": "Tokenized real-world assets (RWAs) explained - MetaMask",
-      "summary": "## How does real-world asset tokenization work?\n\nTokenization follows a multi-step process that bridges traditional legal and financial infrastructure with blockchain technology:\n\nAsset origination and selection: an issuer identifies an asset suitable for tokenization—such as a p",
-      "url": "https://metamask.io/news/understanding-tokenized-real-world-assets-rwa",
-      "topic": "token",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m2d4719de",
-      "date": "2026-08-23",
-      "title": "What is Know Your Agent? A Marketplace Guide",
-      "summary": "Know Your Agent (KYA) is a verification framework that confirms the identity and integrity of AI agents operating in digital environments. Think of it as the equivalent of Know Your Customer (KYC), but built for software instead of people. Its primary purpose is to ensure that AI",
-      "url": "https://www.vouched.id/learn/blog/know-your-agent-marketplaces",
-      "topic": "kya",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "ma6ee108b",
-      "date": "2026-08-23",
-      "title": "Know Your Agent (KYA): AI Agent Verification Explained",
-      "summary": "Organizations familiar with electronic know your customer requirements understand the importance of identity assurance in digital systems.\n\nAs automation expands, organizations must also know their agents. Know Your Agent (KYA) refers to verifying and managing the identity of AI ",
-      "url": "https://www.entrust.com/resources/learn/know-your-agent",
-      "topic": "kya",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "md3caa80c",
-      "date": "2026-08-23",
-      "title": "Know Your Agent: How KYA Secures Autonomous AI | 1Kosmos",
-      "summary": "Unlike traditional identity verification that happens once at registration, Know Your Agent (KYA) validates an agent's identity and authenticates every consequential action at the moment of execution. This runtime authentication ties every action to a verified human identity and ",
-      "url": "https://www.1kosmos.com/resources/blog/know-your-agent-kya-securing-autonomous-ai",
-      "topic": "kya",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m4b05284a",
-      "date": "2026-08-23",
-      "title": "From AI Agents to Know Your Agent: Why KYA Is Critical for Secure Autonomous AI",
-      "summary": "This is where Know Your Agent (KYA) enters the game. Like Know Your Customer (KYC), Know Your Agent frameworks establish trust and accountability for autonomous systems.\n\nKYA is the process of verifying AI agents across identity, authentication, authorization, and policy enforcem",
-      "url": "https://sumsub.com/blog/know-your-agent",
-      "topic": "kya",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m80fcbf25",
-      "date": "2026-08-23",
-      "title": "What is Know Your Agent (KYA)? - Experian Insights",
-      "summary": "At its core, Know Your Agent is a framework for establishing trust in AI-driven interactions. It extends traditional identity verification into a world where software, not people, is acting.\n\nInstead of asking “Who is the customer?”, KYA asks a broader question: Who is this agent",
-      "url": "https://www.experian.com/blogs/insights/what-is-know-your-agent-kya",
-      "topic": "kya",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
       "id": "me4a4054a",
       "date": "2026-08-23",
       "title": "KnowYourAgent (KYA) — Verify AI shopping agents at checkout",
@@ -507,108 +1335,12 @@
       "saved": false
     },
     {
-      "id": "m65fa265e",
-      "date": "2026-08-23",
-      "title": "Which is best for your AI agents? (MPP, ACP, AP2, x402)",
-      "summary": "AP2 (Agent Payments Protocol), developed by Google with 60+ partners, defines the trust and authorization layer for agent-led payments using cryptographically signed mandates - supporting both traditional card payments and crypto via its x402 extension.\n x402, created by Coinbase",
-      "url": "https://www.crossmint.com/learn/agentic-payments-protocols-compared",
-      "topic": "agcom",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "mccf1e5eb",
-      "date": "2026-08-23",
-      "title": "Medium",
-      "summary": "While x402 tackles agent payments via a blockchain microtransaction approach, Google’s Agent Payments Protocol (AP2) addresses the problem from a broader, multi-stakeholder perspective. Announced in late 2025 with the backing of over 60 organizations (including major payment netw",
-      "url": "https://medium.com/@gwrx2005/ai-agents-and-autonomous-payments-a-comparative-study-of-x402-and-ap2-protocols-e71b572d9838",
-      "topic": "agcom",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "mc765382b",
-      "date": "2026-08-23",
-      "title": "Announcing Agent Payments Protocol (AP2)",
-      "summary": "AP2 is designed as a universal protocol, providing security and trust for a variety of payments like stablecoins and cryptocurrencies. To accelerate support for the web3 ecosystem, in collaboration with Coinbase, Ethereum Foundation, MetaMask and other leading organizations, we h",
-      "url": "https://cloud.google.com/blog/products/ai-machine-learning/announcing-agents-to-payments-ap2-protocol",
-      "topic": "agcom",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "mc50bea46",
-      "date": "2026-08-23",
-      "title": "Agent Payments Protocol (AP2)",
-      "summary": "As an extension to the Agent2Agent (A2A) protocol, AP2 Protocol combines x402 stablecoin rail technology to provide complete payment infrastructure for the emerging agent economy and machine economy. Through smart payments capabilities, supporting full-scenario applications from ",
-      "url": "https://agentpaymentsprotocol.info",
-      "topic": "agcom",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m9f05df58",
-      "date": "2026-08-23",
-      "title": "Agentic Payments Explained: ACP, AP2, and x402 | Orium",
-      "summary": "That gap is driving the emergence of a new generation of payment protocols designed specifically for machine-to-machine and agent-to-business commerce. These protocols define how an AI agent can securely authorize, execute, and record a payment on behalf of a user or an organizat",
-      "url": "https://orium.com/blog/agentic-payments-acp-ap2-x402",
-      "topic": "agcom",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
       "id": "mb02a523a",
       "date": "2026-08-23",
       "title": "Powering AI Commerce: Google’s New Agent Payments Protocol (AP2)",
       "summary": "or open new doors for misuse. The agent payments protocol AP2 is an open standard developed by Google and announced on September 16th, 2025 to enable secure, auditable transactions initiated by AI agents. AP2 aims to facilitate trust, authorization, and accountability in AI-drive",
       "url": "https://www.youtube.com/watch?v=lruGF1f2U7E",
       "topic": "agcom",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "ma6b1ec05",
-      "date": "2026-08-23",
-      "title": "What is AI Agent Governance? A Framework for Keeping ...",
-      "summary": "AI agent governance is the discipline of controlling what agents can do, how they can do it, and under what conditions — while maintaining the autonomy that makes them useful. Get it wrong, and you either have ungoverned agents creating risk or over-restricted agents delivering n",
-      "url": "https://airia.com/blog/what-is-ai-agent-governance-a-framework-for-keeping-agents-in-check",
-      "topic": "agmgmt",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "mae82c5a6",
-      "date": "2026-08-23",
-      "title": "AI Agent Governance Framework for Agentic Worfklows | SS&C Blue Prism",
-      "summary": "Ensure the best governance for your organization with SS&C Blue Prism WorkHQ.\n\nLearn More\n\n## What is an AI agent governance framework?\n\nIt’s a structured approach to managing how an AI agent operates within an enterprise environment. It defines the rules and controls that ensure",
-      "url": "https://www.blueprism.com/resources/blog/ai-agent-agentic-governance-framework",
-      "topic": "agmgmt",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m26c0c603",
-      "date": "2026-08-23",
-      "title": "Govern and secure AI agents - Microsoft Learn",
-      "summary": "The diagram illustrates a comprehensive governance and security framework organized into four layers. The top layer, \"Data governance and compliance,\" includes Microsoft Purview Compliance Manager, Microsoft Purview APIs, Copilot Studio governance features, and data location cont",
-      "url": "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai-agents/governance-security-across-organization",
-      "topic": "agmgmt",
       "region": "g",
       "source_type": "industry",
       "entity_type": "материал",
@@ -651,30 +1383,6 @@
       "saved": false
     },
     {
-      "id": "m81325a96",
-      "date": "2026-08-23",
-      "title": "Blockchain Loyalty Programs | Chainlink",
-      "summary": "Blockchain loyalty programs represent a fundamental shift in how enterprises approach customer retention and engagement. By replacing isolated databases with tokenized digital assets, brands can offer consumers verifiable ownership, increased transparency, and expansive interoper",
-      "url": "https://chain.link/article/blockchain-loyalty-programs",
-      "topic": "token",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "mcd6044c3",
-      "date": "2026-08-23",
-      "title": "Tokenization: Supercharging the Traditional Loyalty System | Photon",
-      "summary": "Asset digitization is the goal of a tokenized loyalty program, creating a blockchain-based digital certificate that represents something of value. This digital certificate works very similar to how shares of stock are issued to represent the fractional value of a company: one out",
-      "url": "https://www.photon.com/tokenization-supercharging-the-traditional-loyalty-system",
-      "topic": "token",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
       "id": "m5a1be5f5",
       "date": "2026-08-23",
       "title": "The effect of tokenized rewards on customer loyalty programs",
@@ -699,18 +1407,6 @@
       "saved": false
     },
     {
-      "id": "ma2726a3e",
-      "date": "2026-08-23",
-      "title": "Medium",
-      "summary": "As blockchain tooling becomes easier to use behind the scenes, tokenised loyalty will likely look less like crypto and more like a modern reward layer that happens to use blockchain rails.\n\n## Conclusion\n\nTokenised loyalty can work extremely well, but only when the token supports",
-      "url": "https://medium.com/@ancilartech/tokenised-loyalty-in-2026-what-works-what-fails-and-how-to-stay-out-of-regulatory-trouble-47e04b8f3ff8",
-      "topic": "token",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
       "id": "m9d63bb74",
       "date": "2026-08-23",
       "title": "Blockchain Loyalty Program: Your Ultimate 2026 Step-by-Step Guide",
@@ -728,30 +1424,6 @@
       "title": "RWA Tokenization UAE | Real World Asset Tokenization Services | Finjuris Counsel FZ-LLC",
       "summary": "Tokenized real-world assets (RWAs) are blockchain-based digital tokens that reflect tangible and traditional financial assets, including cash, commodities, stocks, bonds, credit, artwork, and intellectual property. The tokenization of RWAs represents a significant shift in how th",
       "url": "https://finjuris.ae/rwa-tokenization",
-      "topic": "token",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "ma0483b77",
-      "date": "2026-08-23",
-      "title": "How to Tokenize Real-World Assets in the UAE (2026)",
-      "summary": "About RWA Labs\n\nRWA Labs is the UAE's full-stack real-world asset tokenization platform. From company formation and legal structuring to token design, technology deployment, marketing, and ecosystem access, we provide everything founders and institutions need to bring real-world ",
-      "url": "https://rwalabs.ae/how-to-tokenize-real-world-asset-uae",
-      "topic": "token",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m06397a53",
-      "date": "2026-08-23",
-      "title": "RWA Tokenization Explained: Benefits & RWA Strategies",
-      "summary": "Through clear rules and robust infrastructure, the UAE has established itself as a trailblazer, blending traditional finance strengths with blockchain innovation. The tokenization of real-world assets in the UAE is now a rapidly growing reality.\n\nBusinesses, investors, and govern",
-      "url": "https://www.cobo.com/post/real-world-asset-rwa-tokenization-in-the-uae-the-future-of-finance",
       "topic": "token",
       "region": "w",
       "source_type": "industry",
@@ -795,126 +1467,6 @@
       "saved": false
     },
     {
-      "id": "m5647bceb",
-      "date": "2026-08-23",
-      "title": "What new rules for agentic AI in payments might look like",
-      "summary": "#### Explore all Locations United Kingdom\n\n#### Explore all Africa\n\nSouth Africa\n\n#### Explore all Americas\n\n#### Explore all Asia Pacific\n\nAustralia China Japan Philippines Singapore South Korea\n\n#### Explore all Europe\n\nFrance Germany Ireland Luxembourg Poland Netherlands Spain",
-      "url": "https://www.pinsentmasons.com/out-law/analysis/what-new-rules-agentic-ai-payments-look-like",
-      "topic": "agmgmt",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m6f99ff04",
-      "date": "2026-08-23",
-      "title": "Navigating agentic AI regulation in APAC - SymphonyAI",
-      "summary": "1. No specific agentic AI laws in APAC financial services: There’s currently no explicit regulatory guidance on agentic AI across major APAC countries. Firms are expected to use existing risk and accountability frameworks.\n2. Principles-based regulation dominates: Human oversight",
-      "url": "https://www.symphonyai.com/resources/agentic-ai-regulation-apac",
-      "topic": "reg",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "mbc887766",
-      "date": "2026-08-23",
-      "title": "Agentic AI Payments: Navigating Consumer Protection, Innovation, and Regulatory Frameworks - consumerbankers.com",
-      "summary": "This regulatory framework provided consumers with the confidence necessary to transition large swaths of their payments from cash and checks to debit cards and ACH over the subsequent decades. More recently, however, new types of fraud emerging from P2P payments and other sources",
-      "url": "https://consumerbankers.com/research/agentic-ai-payments-navigating-consumer-protection-innovation-and-regulatory-frameworks",
-      "topic": "agmgmt",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m8c59dd23",
-      "date": "2026-08-23",
-      "title": "Agentic AI considerations for payment service providers | Addleshaw Goddard LLP",
-      "summary": "+ How we deliver for clients, globally\n  + Asia offices:\n  + Japan\n  + Singapore\n  + Europe offices:\n  + England & Wales\n  + France\n  + Germany\n  + Ireland\n  + Luxembourg\n  + Netherlands\n  + Poland\n  + Scotland\n  + Spain\n  + Middle East offices:\n  + Kingdom of Saudi Arabia\n  + Om",
-      "url": "https://www.addleshawgoddard.com/en/insights/insights-briefings/2026/financial-regulation/financial-regulation-in-the-know-payments-february-2026/agentic-ai-considerations-payment-service-providers",
-      "topic": "agmgmt",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "md04d1e13",
-      "date": "2026-08-23",
-      "title": "Agentic AI in payments",
-      "summary": "The EU AI Act has introduced a horizontal regulatory framework applicable to the use of AI (across different sectors) which builds on top of the financial services regulation that applies to the use of AI payment agents. This directly applicable Regulation, set to start applying ",
-      "url": "https://www.taylorwessing.com/en/insights-and-events/insights/2026/02/agentic-ai-in-payments",
-      "topic": "reg",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "me9ed2642",
-      "date": "2026-08-23",
-      "title": "AI Agents in Financial Services Market",
-      "summary": "A fifth trend is Salesforce Agentforce, Kore.ai, and Kasisto KAIgentic emerging as platform standards. Salesforce Agentforce provides agent deployment within the Financial Services Cloud, with pre-built agents for customer service, onboarding, and compliance. Kore.ai provides Ban",
-      "url": "https://www.marketsandmarkets.com/Market-Reports/ai-agents-in-financial-services-market-19058072.html",
-      "topic": "reg",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m8d92b82d",
-      "date": "2026-08-23",
-      "title": "Agentic AI in banking - Financial Services",
-      "summary": "# How banks can supercharge intelligent automation with agentic AI\n\n## AI agents are an emerging frontier in banks’ AI journey, but deploying agentic AI in banking may need fresh thinking and a fundamental redesign of existing processes and workflows\n\n### Prakul Sharma\n\nAI & Insi",
-      "url": "https://www.deloitte.com/us/en/insights/industry/financial-services/agentic-ai-banking.html",
-      "topic": "agmgmt",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m6edc4060",
-      "date": "2026-08-23",
-      "title": "AI Agents in Finance",
-      "summary": "Greater inclusion of smaller markets: AI agents also make finance more inclusive by reaching customers and markets that were once too costly or complex to serve. They help enable microfinance in underserved communities and provide personalized digital banking at scale. These capa",
-      "url": "https://www.ibm.com/think/topics/ai-agents-in-finance",
-      "topic": "agmgmt",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "mecd3298c",
-      "date": "2026-08-23",
-      "title": "Agentic AI and the future of work in financial services",
-      "summary": "While the hype around AI persists, 2026 is shaping up as the year agentic AI will create scaled transformation in financial services. A clear gap is emerging between the market leaders, the chasing pack and the laggards. Visionaries now anticipate the rise of the “10× bank”, wher",
-      "url": "https://bankingblog.accenture.com/agentic-ai-future-of-work",
-      "topic": "agmgmt",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m72c2fe76",
-      "date": "2026-08-23",
-      "title": "AI Agents for Financial Services: Top Use Cases and Examples | Workday US",
-      "summary": "AI agents for financial services are emerging as one of the key tools for achieving this without compromising precision, accuracy, or personalization. Agents are capable of making context-driven decisions and acting autonomously within the parameters and guardrails set for them b",
-      "url": "https://www.workday.com/en-us/perspectives/ai/what-are-ai-agents-in-financial-services.html",
-      "topic": "agmgmt",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
       "id": "mddb0350e",
       "date": "2026-08-23",
       "title": "Sirma Group - AI agents ⚙️are set to disrupt the financial...",
@@ -927,71 +1479,11 @@
       "saved": false
     },
     {
-      "id": "m67d668e3",
-      "date": "2026-08-23",
-      "title": "Цифровые финансовые активы — Википедия",
-      "summary": "Цифровые финансовые активы (ЦФА) в России — финансовый инструмент, который удостоверяет цифровые права. К таким правам могут относиться, например, денежные требования, владение эмиссионными ценными бумагами, участие в капитале непубличного акционерного общества, требования переда",
-      "url": "https://ru.wikipedia.org/wiki/%D0%A6%D0%B8%D1%84%D1%80%D0%BE%D0%B2%D1%8B%D0%B5_%D1%84%D0%B8%D0%BD%D0%B0%D0%BD%D1%81%D0%BE%D0%B2%D1%8B%D0%B5_%D0%B0%D0%BA%D1%82%D0%B8%D0%B2%D1%8B",
-      "topic": "token",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m869bc70e",
-      "date": "2026-08-23",
-      "title": "Цифровые финансовые активы в России",
-      "summary": "ЦФА. Цифровые финансовые активы представляют собой цифровые права, включающие денежные требования, возможность осуществления прав по эмиссионным ценным бумагам, права участия в капитале непубличного акционерного общества, право требовать передачи эмиссионных ценных бумаг. Эмитент",
-      "url": "https://cbonds.ru/dfa",
-      "topic": "token",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
       "id": "mb2f10c8c",
       "date": "2026-08-23",
       "title": "Как инвестировать в ЦФА в Сбере | СБЕР СОВА",
       "summary": "Платформа «Цифровые активы» — это система Сбера на основе блокчейна, предназначенная для операций с ЦФА и другими цифровыми правами.\n\nТакже клиентам банка доступны операции с ЦФА через приложение «СберБанк Онлайн».\n\nЧтобы совершать операции с ЦФА в Сбере, вам нужно зарегистрирова",
       "url": "https://sbersova.ru/sections/invest/kak-investirovat-v-cfa-v-sbere",
-      "topic": "token",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m1183ac4e",
-      "date": "2026-08-23",
-      "title": "Цифровые Финансовые Активы",
-      "summary": "Московская биржа\n\nВойти\n\n# Московская биржа — центр запуска ваших цифровых активов\n\n### Ускоряем привлечение инвестиций для бизнеса\n\n## \n\nЦифровые финансовые активы (ЦФА) — цифровые права, выпуск, учет и обращение которых осуществляется путем внесения записей в информационную сис",
-      "url": "https://www.moex.com/ru/digital-assets",
-      "topic": "token",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m499d6560",
-      "date": "2026-08-23",
-      "title": "ЦФА.РФ — Цифровые Финансовые Активы",
-      "summary": "#### Все решения по выпуску ЦФА в одном месте\n\nВыпуски ЦФА проходят на большом количестве платформ. Мы собрали в одном месте все решения, так чтобы вам было удобно следить за активностью эмитентов без серфинга по сайтам операторов.\n\nУслуга\n\n## Выпуск ЦФА под ключ\n\nПолный цикл под",
-      "url": "https://xn--80a3bf.xn--p1ai",
-      "topic": "token",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m18e5fde3",
-      "date": "2026-08-23",
-      "title": "Платформа «Цифровые активы»",
-      "summary": "Цифровые продукты на основе распределенного реестра. Доступ к цифровому финансированию, отсутствие посредников, прозрачность транзакций.",
-      "url": "https://dfa.sber.ru",
       "topic": "token",
       "region": "ru",
       "source_type": "industry",
@@ -1011,60 +1503,12 @@
       "saved": false
     },
     {
-      "id": "mccddc263",
-      "date": "2026-08-23",
-      "title": "Блокчейн в России",
-      "summary": "Основная статья: Блокчейн в Москве\n\n## Обзор проектов и инициатив по использованию блокчейн-технологий\n\n### 2026: Правительство РФ утвердило концепцию токенизации активов реального сектора экономики для развития блокчейна\n\nПравительство РФ утвердило Концепцию токенизации активов ",
-      "url": "https://www.tadviser.ru/index.php/%D0%A1%D1%82%D0%B0%D1%82%D1%8C%D1%8F:%D0%91%D0%BB%D0%BE%D0%BA%D1%87%D0%B5%D0%B9%D0%BD_%D0%B2_%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D0%B8",
-      "topic": "token",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m0404e209",
-      "date": "2026-08-23",
-      "title": "Разбор полетов: как взаимодействуют blockchain и системы лояльности клиентов? - Startup.Network",
-      "summary": "Так, например, бизнес-гигант “Бургер Кинг Россия” запустил программу лояльности базе платформы Waves, в рамках которой компания выпустила 1 млрд Whoppercoin. Это даст возможность клиентам сети получать “вопперкоины” основываясь на сумме чека: 1 рубль = 1 Whoppercoin.   \n   \n По ф",
-      "url": "https://startup.network/ru/news/kak-vzaimodeystvuyut-blockchain-i-sistemy-loyalnosti-klientov.html",
-      "topic": "agmgmt",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
       "id": "md443cbc1",
       "date": "2026-08-23",
       "title": "Блокчейн и программы лояльности",
       "summary": "«РусБонус» «держит нос по ветру» и не собирается упускать возможностей, связанных с применением блокчейна в новых поколениях программ лояльностей. Сейчас в компании ведется разработка решения на основе блокчейна, и хотя еще рано говорить о результатах, первые шаги в перспективном",
       "url": "https://dinect.com/resources/blockchain",
       "topic": "agmgmt",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m062da7ef",
-      "date": "2026-08-23",
-      "title": "Программы лояльности и технологии блокчейн - Manzana Group",
-      "summary": "надежные токены лояльности – для входа в программу лояльности участник использует специальное приложение и личный электронный счет. Эти инструменты позволяют",
-      "url": "https://manzanagroup.ru/information/programmy-loyalnosti-i-tekhnologii-blokcheyn",
-      "topic": "token",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m915adb39",
-      "date": "2026-08-23",
-      "title": "Платформы токенизации активов: обзор и сравнение — WCR Consulting",
-      "summary": "Таким образом, в РФ происходит токенизация металлов, ценных бумаг, недвижимости и иных активов. Правовое регулирование требует усовершенствования и доработок, поскольку сфера криптовалюты крайне слабо развита в РФ. [...] ## 1. Платформы для токенизации активов в РФ. [...] 1. Возм",
-      "url": "https://wcr-consulting.com/blog/2024/07/28/platforms-for-tokenization",
-      "topic": "token",
       "region": "ru",
       "source_type": "industry",
       "entity_type": "материал",
@@ -1083,143 +1527,11 @@
       "saved": false
     },
     {
-      "id": "m537ea9c8",
-      "date": "2026-08-23",
-      "title": "ИИ-агенты и RPA (Robotic Process Automation) - автоматизация для банков",
-      "summary": "Внедрение ИИ в банковской сфере окупается многократно. Исследование Ассоциации ФинТех показало, что топ-5 российских банков инвестируют около $1 млрд в год в ИИ и получают до $3 млрд прибыли ежегодно — то есть 300% возврат на вложения (ТАСС). По данным McKinsey, потенциальная еже",
-      "url": "https://banki.skydigital.pro",
-      "topic": "agmgmt",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m687bca1d",
-      "date": "2026-08-23",
-      "title": "ИИ-агенты в финансах: технология, кейсы и ограничения",
-      "summary": "В России похожую логику реализует Сбер: банк запустил линейку из 17 сервисных AI-агентов на базе GigaChat для бизнеса, которые обслуживают корпоративных клиентов по платежам, эквайрингу, зарплатным проектам.\n\nАналитика и исследования для инвестбанкинга [...] Под агентами стоит пл",
-      "url": "https://generation-ai.ru/media/ai-agenty-v-finansah",
-      "topic": "agmgmt",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m6c5c4a49",
-      "date": "2026-08-23",
-      "title": "ИИ-агенты в банках и кредитных организациях - Блог - Wikibot",
-      "summary": "# ИИ-агенты в банках и кредитных организациях\n\nСергей ХристолюбовСергей Христолюбов\n\nФинтех\n\nИИ-агенты в банках и кредитных организациях  \n\nИскусственный интеллект (ИИ) стремительно меняет банковскую индустрию, трансформируя процессы, улучшая клиентский опыт и повышая эффективнос",
-      "url": "https://wikibot.pro/blog/ai-agent-for-bank",
-      "topic": "agmgmt",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m3b0e8f6b",
-      "date": "2026-08-23",
-      "title": "ИИ-БАНКИНГ_26",
-      "summary": "Спикеры:\n\n● Руслан Булатов, директор департамента финансовых технологий Банка России   \n● Максим Григорьев, генеральный директор Ассоциации ФинТех\n\n● Семен Будённый, управляющий директор AI Сбер, научный консультант AIRI\n\n● Валерия Воробьева, генеральный директор, Альянс в сфере ",
-      "url": "https://event-iibanking.bosfera.ru/ii4",
-      "topic": "agmgmt",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m178d68ca",
-      "date": "2026-08-23",
-      "title": "ИИ-агенты и эффект в цифрах: главные тренды финтеха в 2025 году | РБК Тренды",
-      "summary": "RAG стал тем элементом, который превратил ИИ-агента в «цифрового эксперта», способного давать точные и обоснованные ответы в реальном времени. Он устраняет главный недостаток больших языковых моделей — склонность к галлюцинациям. Неудивительно, что каждая пятая компания на россий",
-      "url": "https://trends.rbc.ru/trends/industry/cmrm/695242449a7947e94ca3bd48",
-      "topic": "agmgmt",
-      "region": "ru",
-      "source_type": "news",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m48de7c8e",
-      "date": "2026-08-23",
-      "title": "Выпуск утилитарных цифровых прав в | Институт Корпоративных Технологий",
-      "summary": "## Что такое УЦП\n\nУтилитарные цифровые права (УЦП) – это новый вид цифровых активов, закрепленный в российском законодательстве (ФЗ №259-ФЗ “О цифровых финансовых активах”). Они предоставляют их держателю право на получение определённого товара, услуги или иного имущественного эк",
-      "url": "https://ikt-gik.ru/services/vypusk-utilitarnykh-tsifrovykh-prav",
-      "topic": "token",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m3dd44631",
-      "date": "2026-08-23",
-      "title": "Утилитарные цифровые права",
-      "summary": "## Понятие\n\nУтилитарные цифровые права (УЦП) – это вид цифровых прав. Цифровые права являются, в свою очередь, видом имущественных прав. В одном ряду с ними стоят безналичные денежные средства и бездокументарные ценные бумаги.\n\nНа данный момент законодательство выделяет три вида ",
-      "url": "https://dgtlaw.ru/analytic/utilitarnye-cifrovye-prava",
-      "topic": "reg",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m5930fafc",
-      "date": "2026-08-23",
-      "title": "Что такое утилитарные цифровые права?",
-      "summary": "ЭмитентуВыпуски активовНовости\n\n# Что такое утилитарные цифровые права?\n\nУтилитарными цифровыми правами (УЦП) являются права, которые включают требования на:\n\n передачу вещи;\n\n передачу исключительных прав на результаты интеллектуальной деятельности и (или) прав использовать резу",
-      "url": "https://tokeon.ru/voprosy-otvety/chto-takoe-utilitarnye-cifrovye-prava",
-      "topic": "token",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m54294965",
-      "date": "2026-08-23",
-      "title": "Утилитарные цифровые права: что это такое и для чего нужны?",
-      "summary": "Также в энергетическом секторе встречаются проекты, где УЦП дают право на определенный объем поставки электроэнергии в будущем.  \n  \nУтилитарные цифровые права — это инструмент, который открывает бизнесу и инвесторам новые возможности для привлечения капитала, организации расчето",
-      "url": "https://corpteh.moscow/utilitarnyye_tsifrovyye_prava_chto_eto_takoye_i_dlya_chego_nuzhny",
-      "topic": "agmgmt",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m6e01be1c",
-      "date": "2026-08-23",
-      "title": "Цифровые свидетельства на Утилитарные цифровые права",
-      "summary": "Правовая основа. Что такое УЦП и ЦС на УЦП\n\nФедеральный закон от 02.08.2019 N 259-ФЗ «О привлечении инвестиций с использованием инвестиционных платформ и о внесении изменений в отдельные законодательные акты Российской Федерации» (Статьи 8, 9).   \n  \n Утилитарное цифровое право п",
-      "url": "https://spvb.ru/rynki/fondovyy-rynok/cifrovye_svidetelstva",
-      "topic": "reg",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
       "id": "m4dcefafe",
       "date": "2026-08-23",
       "title": "УТИЛИТАРНЫЕ ЦИФРОВЫЕ ПРАВА КАК РАЗНОВИДНОСТЬ ЦИФРОВЫХ ПРАВ – тема научной статьи по праву читайте бесплатно текст научно-исследовательской работы в электронной библиотеке КиберЛенинка",
       "summary": "Анализ ст. 8 Закона № 259 позволяет выделить три разновидности прав требования, удостоверенных УЦП. Утилитарные цифровые права могут удостоверять как права по передаче вещей, так и права на выполнение работы или оказания услуги, а также права на объекты интеллектуальной собственн",
       "url": "https://cyberleninka.ru/article/n/utilitarnye-tsifrovye-prava-kak-raznovidnost-tsifrovyh-prav",
-      "topic": "reg",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m56b108c4",
-      "date": "2026-08-23",
-      "title": "Цифровые финансовые активы (ЦФА): правовой режим, виды и государственное регулирование",
-      "summary": "В соответствии со статьей 1 Федерального закона от 31.07.2020 № 259-ФЗ «О цифровых финансовых активах, цифровой валюте и о внесении изменений в отдельные законодательные акты Российской Федерации» (далее – «Закон № 259-ФЗ», «Закон о ЦФА», «Закон о цифровых финансовых активах») ЦФ",
-      "url": "https://brace-lf.com/informaciya/finansovoe-pravo/tsfa-ponyatie-vidy-i-regulirovanie-tsifrovykh-finansovykh-aktivov",
       "topic": "reg",
       "region": "ru",
       "source_type": "industry",
@@ -1239,35 +1551,11 @@
       "saved": false
     },
     {
-      "id": "m8c7bab83",
-      "date": "2026-08-23",
-      "title": "ЦФА в 2026: что это, виды, примеры, закон, как инвестировать и выпускать цифровые активы",
-      "summary": "Развитие ЦФА поддерживается и регулируется российским Центральным банком, что дает полноценную юридическую защиту прав инвесторов.\n\nОсновное преимущество ЦФА — то, что они созданы на технологии блокчейн. Это позволяет автоматизировать исполнение сделок благодаря смарт-контрактам,",
-      "url": "https://t-j.ru/guide/digital-financial-assets",
-      "topic": "token",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
       "id": "me8dad1bc",
       "date": "2026-08-23",
       "title": "Цифровые финансовые активы и цифровая валюта",
       "summary": "Права, удостоверенные ЦФА, возникают у их первого обладателя с момента, когда в соответствующей информационной системе появится запись об их зачислении этому обладателю. Вид и объем прав указывают в решении о выпуске ЦФА (ст. 2, 3 закона № 259-ФЗ). ЦБ РФ уточнил, в каких пределах",
       "url": "https://www.law.ru/article/23026-zakon-o-tsifrovyh-finansovyh-aktivah",
-      "topic": "token",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m2c598c59",
-      "date": "2026-08-23",
-      "title": "Цифровые финансовые активы | Банк России",
-      "summary": "5 Могут ли физические лица, не являющиеся квалифицированными инвесторами, приобретать ЦФА? Если да, то есть ли какие-нибудь ограничения на инвестирование в ЦФА такими физическими лицами?\n\n Обновлено: 25.01.2023 \n\nФизические лица, не являющиеся квалифицированными инвесторами, могу",
-      "url": "https://www.cbr.ru/faq/tsfa",
       "topic": "token",
       "region": "ru",
       "source_type": "industry",
@@ -1305,18 +1593,6 @@
       "summary": "To help protect businesses, the Agentic Commerce Suite handles and processes Shared Payment Tokens (SPTs), a new payment primitive for agentic commerce. AI agents use SPTs to initiate payments using a buyer’s saved payment method without exposing payment credentials. Every token ",
       "url": "https://stripe.com/blog/agentic-commerce-suite",
       "topic": "agcom",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "mb5f442f0",
-      "date": "2026-08-22",
-      "title": "RWA.xyz | Analytics on Tokenized Real-World Assets",
-      "summary": "GRO$89.8M+30.89%\n\nPAZ-1$22.4M\n\nPRPTY$20.0M\n\nPFII$16.3M\n\nPRO-100$5.2M\n\nCME-1$4.2M\n\nLVT-2$2.5M\n\nCDS-1$2.2M\n\nMAD-5$2.1M\n\nSAT-1$2.0M\n\n# Global Market Overview\n\nWelcome to RWA.xyz. Discover every tokenized real-world asset and the broader tokenization ecosystem, from asset managers to",
-      "url": "https://app.rwa.xyz",
-      "topic": "token",
       "region": "g",
       "source_type": "industry",
       "entity_type": "материал",
@@ -1365,18 +1641,6 @@
       "summary": "AP2 (Agent Payments Protocol) enables AI agents to autonomously execute payments with cryptographic authorization\n Supports both traditional payment rails and crypto/stablecoins via the x402 extension\n Built on A2A and MCP protocols, backed by 60+ organizations including Google, ",
       "url": "https://www.cobo.com/post/ap2-protocol-complete-guide-to-agent-payments-for-web3-developers-2026",
       "topic": "agcom",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "md05db374",
-      "date": "2026-08-22",
-      "title": "Medium",
-      "summary": "What is agent governance and why is it important?  \nAgent governance is the framework of policies and technical controls that ensure AI agents operate safely, securely, and reliably. It’s crucial because without proper governance, AI agents can pose significant risks including da",
-      "url": "https://medium.com/@tahirbalarabe2/what-is-ai-agent-governance-the-four-pillars-of-ai-agent-governance-d9b045475b3e",
-      "topic": "agmgmt",
       "region": "g",
       "source_type": "industry",
       "entity_type": "материал",
@@ -1455,18 +1719,6 @@
       "saved": false
     },
     {
-      "id": "md828e605",
-      "date": "2026-08-22",
-      "title": "How Agentic AI Will Reshape Payments in - IMF eLibrary",
-      "summary": "regulation affecting agentic AI applications, such as EU’s AI Act, is a key risk mitigation strategy that the public sector should consider (European Union Artificial Intelligence Act 2024). [...] agents responsibly including a thorough ex-ante risk assessment by selecting approp",
-      "url": "https://www.elibrary.imf.org/view/journals/068/2026/004/article-A001-en.xml",
-      "topic": "reg",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
       "id": "m3e68dfa4",
       "date": "2026-08-22",
       "title": "How Agentic AI Is Set to Dramatically Transform Banking",
@@ -1474,18 +1726,6 @@
       "url": "https://internationalbanker.com/banking/how-agentic-ai-is-set-to-dramatically-transform-banking",
       "topic": "agmgmt",
       "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m505b4420",
-      "date": "2026-08-22",
-      "title": "ФИНАНСОВО-ПРАВОВОЕ РЕГУЛИРОВАНИЕ ...",
-      "summary": "by ШР Зарипов · 2025 — Цель исследования – анализ финансовоправовых аспектов токенизации программ лояльности в России, выявление пробелов и коллизий в регулировании и разработка",
-      "url": "https://cyberleninka.ru/article/n/finansovo-pravovoe-regulirovanie-tokenizatsii-programm-loyalnosti-gosudarstvennyh-kommercheskih-i-nekommercheskih-organizatsiy-v",
-      "topic": "reg",
-      "region": "ru",
       "source_type": "industry",
       "entity_type": "материал",
       "saved": false
@@ -1503,36 +1743,12 @@
       "saved": false
     },
     {
-      "id": "m5b525fc7",
-      "date": "2026-08-22",
-      "title": "Десятка прототипов ИИ-агентов - Connect-WIT",
-      "summary": "В пилоте приняли участие эксперты АФТ из АльфаСтрахования, Банка ВБРР, ДОМ.РФ, Кредит Европа Банка (Россия), финансового маркетплейса Сравни, Капитал Лайф Страхование Жизни, Банка Синара, MWS AI, Ростелекома, Сбера, Yandex B2B Tech, Газпромбанка и ФлексСофта. В роли наблюдателей ",
-      "url": "https://www.connect-wit.ru/desyatka-prototipov-ii-agentov.html",
-      "topic": "agmgmt",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
       "id": "m061182d3",
       "date": "2026-08-22",
       "title": "Утилитарные цифровые права: что такое и зачем нужны? - Экспобанк",
       "summary": "Утилитарные цифровые права (УЦП) – это возникающие и оборачиваемые в инвестиционной платформе права требования передачи вещи или исключительных",
       "url": "https://expobank.ru/blog/utilitarnye-tsifrovye-prava-chto-takoe-i-zachem-nuzhny",
       "topic": "agmgmt",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m234edeaa",
-      "date": "2026-08-22",
-      "title": "ЦФА и УЦП: виды цифровых прав, выпуск и обращение",
-      "summary": "Утилитарные цифровые права по своей экономической сути близки к предварительно оплаченному праву на получение конкретного исполнения в будущем. Инвестор приобретает в информационной системе цифровое право, которое дает ему возможность требовать от лица, разместившего УЦП, передач",
-      "url": "https://pravovest-audit.ru/nashi-statii-nalogi-i-buhuchet/tsifrovye-finansovye-aktivy-i-utilitarnye-tsifrovye-prava-pravovaya-i-ekonomicheskaya-sushchnost-i-p",
-      "topic": "token",
       "region": "ru",
       "source_type": "industry",
       "entity_type": "материал",
@@ -1556,42 +1772,6 @@
       "title": "Как ЦБ РФ контролирует оборот цифровых активов?",
       "summary": "Основой регулирования ЦФА служит Федеральный закон № 259-ФЗ «О цифровых финансовых активах», принятый в 2020 году. Этот закон определяет правовой статус ЦФА, правила их выпуска и обращения, а также закрепляет полномочия ЦБ РФ в этой сфере. Дополнительно статья 128 Гражданского ко",
       "url": "https://www.fa.ru/university/structure/university/uso/press-service/press-releases/kak-tsb-rf-kontroliruet-oborot-tsifrovykh-aktivov",
-      "topic": "reg",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "mc84bccbb",
-      "date": "2026-08-22",
-      "title": "ЦФА по закону: что нужно знать о регулировании",
-      "summary": "Детали регулирования (лимиты, конкретные требования к отчетности, перечни документов) могут меняться, но фундаментальная логика остается стабильной: ЦФА — это цифровая форма традиционных прав, выпускаемая под надзором Банка России через аккредитованных операторов с обязательной ф",
-      "url": "https://gidmark.ru/stati/yuridicheskaya-baza-czfa-v-rossii,-klyuchevyie-trebovaniya-fz-259-i-svyazannyie-normativyi",
-      "topic": "reg",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m8b0f6ef6",
-      "date": "2026-08-22",
-      "title": "Регуляторный мониторинг ЦФА - Цифровые Финансовые Активы",
-      "summary": "В России регулятором цифровых финансовых активов является Центральный банк. Он отвечает за выработку правил и нормативных требований к деятельности компаний, работающих с цифровыми активами. ЦБ также осуществляет контроль и надзор за их деятельностью. Минфин принимает решения о н",
-      "url": "https://xn--80a3bf.xn--p1ai/cfa-centrobank.html",
-      "topic": "token",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m89267b65",
-      "date": "2026-08-22",
-      "title": "Статья 1. Предмет регулирования и сфера действия настоящего Федерального закона \\ КонсультантПлюс",
-      "summary": "2. Цифровыми финансовыми активами признаются цифровые права, включающие денежные требования, возможность осуществления прав по эмиссионным ценным бумагам, права участия в капитале непубличного акционерного общества, право требовать передачи эмиссионных ценных бумаг, которые преду",
-      "url": "https://www.consultant.ru/document/cons_doc_LAW_358753/e21bf6629de12458b6382a7c2310cc359186da60",
       "topic": "reg",
       "region": "ru",
       "source_type": "industry",
@@ -1647,30 +1827,6 @@
       "saved": false
     },
     {
-      "id": "m71d4781d",
-      "date": "2026-08-21",
-      "title": "How Know Your Agent (KYA) Verification Works",
-      "summary": "Know Your Agent is a verification framework that confirms an AI agent’s identity, authorization scope, and behavioral integrity before and during a transaction — extending the logic of KYC to non-human actors operating on a customer’s behalf.\n AI agents can be hijacked mid-sessio",
-      "url": "https://indatalabs.com/blog/know-your-agent-ai",
-      "topic": "kya",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "mc12e43e3",
-      "date": "2026-08-21",
-      "title": "AP2 - Agent Payments Protocol Documentation",
-      "summary": "## What is AP2?¶\n\nAgent Payments Protocol (AP2) is an open protocol for the emerging Agent Economy. It's designed to enable secure, reliable, and interoperable agent commerce for developers, merchants, and the payments industry. The protocol is available as an extension for the o",
-      "url": "https://ap2-protocol.org",
-      "topic": "agcom",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
       "id": "m8a75245e",
       "date": "2026-08-21",
       "title": "AI Agent Governance: Big Challenges, Big Opportunities | IBM",
@@ -1712,18 +1868,6 @@
       "title": "Leveraging Smart Contracts to Manage Loyalty Points | Circle",
       "summary": "ERC-20 tokens can be used for creating points in blockchain-based loyalty programs. As ERC-20 tokens, your points can now be managed digitally on blockchain. This means they can be held in Web3 wallets, easily exchanged between wallets, created and destroyed, and bought, sold and",
       "url": "https://www.circle.com/blog/leveraging-smart-contracts-to-manage-loyalty-points",
-      "topic": "token",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "mcb799d7c",
-      "date": "2026-08-21",
-      "title": "RWA Tokenization Platform Guide for Institutions",
-      "summary": "$867 trillion in total addressable real-world assets globally\n $10 trillion projected tokenized asset market by 2030 (BCG)\n BlackRock BUIDL fund surpassed $500M in tokenized Treasuries within months\n JPMorgan Onyx has processed $900B+ in tokenized repo transactions\n Traditional s",
-      "url": "https://www.liquidmercury.com/resources/rwa-tokenization",
       "topic": "token",
       "region": "w",
       "source_type": "industry",
@@ -1820,18 +1964,6 @@
       "title": "Цифровые права (ЦФА)",
       "summary": "Гибридные цифровые права (ГЦП) – цифровые права, включающие одновременно элементы ЦФА и утилитарных цифровых прав.\n\nimage   ЦФА в бизнесе: что это и для чего нужно? PDF, 879.88 КБ\n\nЗапрос коммерческого предложения\n\nОсновные виды ЦФА и ГЦП на российском рынке\n\nЦифровые финансовые ",
       "url": "https://kept.ru/services/consulting/tsifrovye-prava-tsfa",
-      "topic": "token",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m51682395",
-      "date": "2026-08-21",
-      "title": "Цифровые финансовые активы и их операторы",
-      "summary": "ЦФА— это цифровые права, включающие денежные требования, возможность осуществления прав по эмиссионным ценным бумагам, права участия в капитале непубличного акционерного общества, право требовать передачи эмиссионных ценных бумаг, которые предусмотрены решением о выпуске ЦФА.\n\n В",
-      "url": "https://www.cbr.ru/finm_infrastructure/digital_oper",
       "topic": "token",
       "region": "ru",
       "source_type": "industry",
@@ -2175,18 +2307,6 @@
       "saved": false
     },
     {
-      "id": "m3bdae464",
-      "date": "2026-08-17",
-      "title": "Making blockchain real for customer loyalty programs | Deloitte US",
-      "summary": "Customer loyalty programs are not realizing their full potential due to low client retention and redemption rates, time delays, and high costs. That’s where blockchain comes in.\n\n### Introducing blockchain as a customer loyalty solution [...] In this installment of the Deloitte C",
-      "url": "https://www.deloitte.com/us/en/industries/financial-services/articles/making-blockchain-real-customer-loyalty-rewards-programs.html",
-      "topic": "agmgmt",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
       "id": "mbe7bada1",
       "date": "2026-08-17",
       "title": "Tokenisation of Real-World Assets at RWA SUMMIT Dubai ...",
@@ -2295,18 +2415,6 @@
       "saved": false
     },
     {
-      "id": "m3f9514ab",
-      "date": "2026-08-16",
-      "title": "Agentic AI in Banking: Meaning, Benefits, and Applications | Salesforce",
-      "summary": "From IT infrastructure to staffing schedules, agentic AI helps banks adjust based on usage patterns, forecasted demand, or emerging bottlenecks. This means smarter allocation of resources without waste or downtime.\n\n#### Data Processing and Analysis at Scale\n\nWith access to large",
-      "url": "https://www.salesforce.com/financial-services/artificial-intelligence/agentic-ai-in-banking",
-      "topic": "agmgmt",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
       "id": "mf5a4dbb5",
       "date": "2026-08-16",
       "title": "Правительство РФ утвердило концепцию токенизации активов реального сектора экономики для развития блокчейна",
@@ -2338,18 +2446,6 @@
       "url": "https://boomi.com/blog/ai-agent-governance-framework",
       "topic": "agmgmt",
       "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m422cc5dc",
-      "date": "2026-08-15",
-      "title": "The Evolution of Loyalty With Tokenization | Ripple | Ripple",
-      "summary": "The tokenization of loyalty programs represents a transformative leap forward, harnessing the power of blockchain to create more engaging, valuable, and user-friendly experiences. As companies navigate this evolution, the potential for innovation is vast, promising a future where",
-      "url": "https://ripple.com/insights/the-evolution-of-customer-loyalty-with-tokenizaiton",
-      "topic": "token",
-      "region": "w",
       "source_type": "industry",
       "entity_type": "материал",
       "saved": false
@@ -2422,18 +2518,6 @@
       "url": "https://cloudsecurityalliance.org/blog/2025/10/06/secure-use-of-the-agent-payments-protocol-ap2-a-framework-for-trustworthy-ai-driven-transactions",
       "topic": "agcom",
       "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "m3f65a8c6",
-      "date": "2026-08-14",
-      "title": "RWA Labs | UAE Real-World Asset Tokenization Ecosystem",
-      "summary": "THE TOKENIZATION OF REAL-WORLD ASSETS (RWA) IS ACCELERATING, WITH OVER $24.30 BILLION IN VALUE LOCKED ON PUBLIC BLOCKCHAINS AS OF JUNE 2025 (SOURCE: RWA.XYZ).\n\nTo meet this rising demand, RWA Labs launches as a full-scope platform and infrastructure provider based in the UAE — he",
-      "url": "https://rwalabs.ae",
-      "topic": "token",
-      "region": "w",
       "source_type": "industry",
       "entity_type": "материал",
       "saved": false
@@ -2571,18 +2655,6 @@
       "saved": false
     },
     {
-      "id": "m6efa4722",
-      "date": "2026-08-13",
-      "title": "A Systematic Review of Blockchain-based Loyalty Programs",
-      "summary": "Despite this hype, we have yet to see an examination of existing blockchain-based loyalty solutions. This paper identifies, reviews, and classifies tokenized loyalty solutions. Using a web-scraping method, we systematically retrieved 9,642 tokens listed on the coinmarketcap.com w",
-      "url": "https://scholarspace.manoa.hawaii.edu/bitstreams/0cb3be05-3ead-4a5e-ad28-1087cf98ea97/download",
-      "topic": "token",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
       "id": "m98c37153",
       "date": "2026-08-13",
       "title": "Каковы перспективы токенизации реальных активов в России - Ведомости",
@@ -2600,18 +2672,6 @@
       "title": "Минфин России запускает токенизацию активов: концепция переноса собственности на блокчейн",
       "summary": "06.02.2026 Минфин России представил концепцию токенизации активов реального сектора, которая предполагает перенос прав собственности на блокчейн-инфраструктуру. Документ уже утверждён правительством, и сейчас ведомства переходят к практической стадии реализации. Речь идёт не о те",
       "url": "https://moscow-city.guide/kriptovlyuta/minfin-predstavil-kontseptsiyu-tokenizatsii-realnykh-aktivov",
-      "topic": "token",
-      "region": "ru",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "mfc0efa01",
-      "date": "2026-08-13",
-      "title": "Российский рынок токенов может достигнуть 13 трлн ...",
-      "summary": "В России рынок токенизации развивается по пути создания изолированных экосистем, когда обращение активов ограничено рамками отдельных платформ.",
-      "url": "https://www.sberbank.ru/ru/sberpress/all/article?newsID=e7a67d35-f81e-4d94-8dee-c26e0e038b6a&blockID=1303&regionID=16&lang=ru&type=NEWS",
       "topic": "token",
       "region": "ru",
       "source_type": "industry",
@@ -3087,18 +3147,6 @@
       "saved": false
     },
     {
-      "id": "m120e1bd7",
-      "date": "2026-08-09",
-      "title": "Dubai Land Department - Real Estate Tokenization",
-      "summary": "Powered by Dubai Land Department in collaboration with the Virtual Assets Regulatory Authority (VARA), Dubai Future Foundation and the Central Bank of the UAE, the Pilot Phase of Real Estate Tokenization Project marks a bold step toward the future of property investment in the em",
-      "url": "https://dubailand.gov.ae/en/eservices/real-estate-tokenization",
-      "topic": "token",
-      "region": "w",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
       "id": "m101a385a",
       "date": "2026-08-09",
       "title": "AI Agents in Finance and Fintech: A Scientific Review of Agent-Based Systems, Applications, and Future Horizons",
@@ -3165,18 +3213,6 @@
       "summary": "AP2 Blog\n\n  \n\n# AP2 Blog\n\nWelcome to the AP2 Blog! We focus on Agent Payments Protocol technical analysis, sharing the latest practices in intelligent agent payments, providing developers with authoritative x402 payment rail guides and ecosystem observations.\n\n## 🎯 Content Catego",
       "url": "https://agentpaymentsprotocol.info/blog",
       "topic": "agcom",
-      "region": "g",
-      "source_type": "industry",
-      "entity_type": "материал",
-      "saved": false
-    },
-    {
-      "id": "mab1d9397",
-      "date": "2026-08-08",
-      "title": "How to build an agentic AI governance framework that scales",
-      "summary": "An agentic AI governance framework is a set of scalable principles, policies, and controls that define acceptable agent behavior, manage access to tools and data, and ensure accountability. Unlike traditional ML governance, it must govern not only model outputs but also agent act",
-      "url": "https://www.datarobot.com/blog/agentic-ai-governance-framework",
-      "topic": "agmgmt",
       "region": "g",
       "source_type": "industry",
       "entity_type": "материал",
@@ -4212,7 +4248,7 @@
       ],
       "status": "растёт",
       "signal": "BUIDL: +фонды",
-      "date": "2026-08-23"
+      "date": "2026-08-24"
     },
     {
       "name": "Ripple",
@@ -4223,7 +4259,7 @@
       ],
       "status": "растёт",
       "signal": "RWA на XRPL",
-      "date": "2026-08-23"
+      "date": "2026-08-24"
     },
     {
       "name": "Coinbase",
@@ -4233,7 +4269,7 @@
       ],
       "status": "растёт",
       "signal": "x402 → Linux Foundation",
-      "date": "2026-08-23"
+      "date": "2026-08-24"
     },
     {
       "name": "Skyfire",
@@ -4243,7 +4279,7 @@
       ],
       "status": "новое",
       "signal": "раунд $8,5M · KYA",
-      "date": "2026-08-23"
+      "date": "2026-08-24"
     },
     {
       "name": "Visa / Mastercard",
@@ -4253,7 +4289,7 @@
       ],
       "status": "активен",
       "signal": "агентные платежи",
-      "date": "2026-08-23"
+      "date": "2026-08-24"
     },
     {
       "name": "Google (AP2)",
@@ -4263,7 +4299,7 @@
       ],
       "status": "активен",
       "signal": "x402 как рельс",
-      "date": "2026-08-23"
+      "date": "2026-08-24"
     },
     {
       "name": "Сбер",
@@ -4274,7 +4310,7 @@
       ],
       "status": "стабильно",
       "signal": "ЦФА + ИИ-ассистент",
-      "date": "2026-08-23"
+      "date": "2026-08-24"
     },
     {
       "name": "Т-Банк",
@@ -4285,7 +4321,7 @@
       ],
       "status": "активен",
       "signal": "лояльность + ИИ",
-      "date": "2026-08-23"
+      "date": "2026-08-24"
     },
     {
       "name": "Атомайз",
@@ -4295,7 +4331,7 @@
       ],
       "status": "растёт",
       "signal": "ЦФА-платформа",
-      "date": "2026-08-23"
+      "date": "2026-08-24"
     },
     {
       "name": "Яндекс",
@@ -4305,7 +4341,7 @@
       ],
       "status": "активен",
       "signal": "ИИ-агенты",
-      "date": "2026-08-23"
+      "date": "2026-08-24"
     },
     {
       "name": "МТС Финтех",
@@ -4316,7 +4352,7 @@
       ],
       "status": "наш",
       "signal": "токен-лояльность + агент",
-      "date": "2026-08-23"
+      "date": "2026-08-24"
     }
   ],
   "radar": []
